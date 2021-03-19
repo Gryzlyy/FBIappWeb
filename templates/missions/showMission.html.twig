@@ -1,0 +1,67 @@
+{% extends 'missions/index.html.twig' %}
+
+
+{% block title %}
+    {{ mission.title }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>{{ mission.title }}</h1>
+
+    <table class="table table-hover table-repsonsive text-justify align-middle">
+        <tbody>
+            <tr>
+                <th>Title</th>
+                <td>{{ mission.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ mission.description }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ mission.status }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ mission.type }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ mission.country }}</td>
+            </tr>
+            <tr>
+                <th>Start date</th>
+                <td>{{ mission.startDate }}</td>
+            </tr>
+            <tr>
+                <th>End date</th>
+                <td>{{ mission.endDate }}</td>
+            </tr>
+            <tr>
+                <th>Required skills</th>
+                <td>{{ mission.skills.name }}</td>
+            </tr>
+            <tr>
+                <th>Involved agents</th>
+                    {% for agent in mission.agents %}
+                        <td>{{ agent.codeName }}</td>
+                    {% endfor %}
+            </tr>
+            <tr>
+                <th>TARGETS</th>
+                {% for target in mission.targets %}
+                    <td>{{ target.codeName }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Involved contacts</th>
+                {% for contact in mission.contacts %}
+                    <td>{{ contact.codeName }}</td>
+                {% endfor %}
+            </tr>
+
+        </tbody>
+    </table>
+{% endblock %}

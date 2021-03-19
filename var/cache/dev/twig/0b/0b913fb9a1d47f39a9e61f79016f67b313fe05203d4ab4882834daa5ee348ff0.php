@@ -63,7 +63,7 @@ class __TwigTemplate_7da3a35ab76d279310c8004f438792a1e86273052cf84c05a984f712c64
         $this->displayBlock('javascripts', $context, $blocks);
         // line 15
         echo "    </head>
-    <body>
+    <body style=\"margin: 2%\">
         ";
         // line 17
         $this->displayBlock('body', $context, $blocks);
@@ -109,9 +109,8 @@ class __TwigTemplate_7da3a35ab76d279310c8004f438792a1e86273052cf84c05a984f712c64
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 9
-        echo "            ";
-        // line 10
-        echo "        ";
+        echo "            <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -131,9 +130,8 @@ class __TwigTemplate_7da3a35ab76d279310c8004f438792a1e86273052cf84c05a984f712c64
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 13
-        echo "            ";
-        // line 14
-        echo "        ";
+        echo "            <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0\" crossorigin=\"anonymous\"></script>
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -167,7 +165,7 @@ class __TwigTemplate_7da3a35ab76d279310c8004f438792a1e86273052cf84c05a984f712c64
 
     public function getDebugInfo()
     {
-        return array (  146 => 17,  136 => 14,  134 => 13,  124 => 12,  114 => 10,  112 => 9,  102 => 8,  83 => 5,  71 => 18,  69 => 17,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  144 => 17,  133 => 13,  123 => 12,  112 => 9,  102 => 8,  83 => 5,  71 => 18,  69 => 17,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -180,14 +178,14 @@ class __TwigTemplate_7da3a35ab76d279310c8004f438792a1e86273052cf84c05a984f712c64
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+            <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl\" crossorigin=\"anonymous\">
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0\" crossorigin=\"anonymous\"></script>
         {% endblock %}
     </head>
-    <body>
+    <body style=\"margin: 2%\">
         {% block body %}{% endblock %}
     </body>
 </html>

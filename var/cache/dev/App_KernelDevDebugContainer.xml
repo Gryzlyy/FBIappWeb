@@ -3274,15 +3274,25 @@
         <argument key="loader" type="service" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.YxNo8ZP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.7l.0eYI" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="missionsRepository" type="service" id="App\Repository\MissionsRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.KGoRcF7" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\MissionsController::index" type="service" id=".service_locator.7l.0eYI"/>
+        <argument key="App\Controller\MissionsController::showMission" type="service" id=".service_locator.7l.0eYI"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
         <argument key="kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
+        <argument key="App\Controller\MissionsController:index" type="service" id=".service_locator.7l.0eYI"/>
+        <argument key="App\Controller\MissionsController:showMission" type="service" id=".service_locator.7l.0eYI"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:terminate" type="service" id=".service_locator.KfwZsne"/>
@@ -3613,12 +3623,12 @@
     <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver"/>
     <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver"/>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.YxNo8ZP"/>
+      <argument type="service" id=".service_locator.KGoRcF7"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.YxNo8ZP"/>
+      <argument type="service" id=".service_locator.KGoRcF7"/>
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
@@ -3924,7 +3934,7 @@
     <service id="doctrine.migrations.metadata_storage" alias="doctrine.migrations.storage.table_storage"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.YxNo8ZP"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.KGoRcF7"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

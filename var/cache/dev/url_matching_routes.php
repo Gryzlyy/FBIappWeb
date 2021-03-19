@@ -17,7 +17,7 @@ return [
         '/agents' => [[['_route' => 'agents', '_controller' => 'App\\Controller\\AgentsController::index'], null, null, null, false, false, null]],
         '/contacts' => [[['_route' => 'contacts', '_controller' => 'App\\Controller\\ContactsController::index'], null, null, null, false, false, null]],
         '/hideouts' => [[['_route' => 'hideouts', '_controller' => 'App\\Controller\\HideoutsController::index'], null, null, null, false, false, null]],
-        '/missions' => [[['_route' => 'missions', '_controller' => 'App\\Controller\\MissionsController::index'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'app.home', '_controller' => 'App\\Controller\\MissionsController::index'], null, null, null, false, false, null]],
         '/skills' => [[['_route' => 'skills', '_controller' => 'App\\Controller\\SkillsController::index'], null, null, null, false, false, null]],
         '/targets' => [[['_route' => 'targets', '_controller' => 'App\\Controller\\TargetsController::index'], null, null, null, false, false, null]],
     ],
@@ -38,6 +38,7 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/missions/([^/]++)(*:187)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -47,8 +48,9 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        187 => [
+            [['_route' => 'mission_details', '_controller' => 'App\\Controller\\MissionsController::showMission'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

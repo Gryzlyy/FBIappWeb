@@ -50,7 +50,7 @@ class Missions
     private $agents;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Skills::class, inversedBy="missions")
+     * @ORM\ManyToOne(targetEntity=Skills::class, inversedBy="missions", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $skills;
@@ -76,7 +76,7 @@ class Missions
     private $contacts;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Hideouts::class, inversedBy="missions")
+     * @ORM\ManyToOne(targetEntity=Hideouts::class, inversedBy="missions", cascade={"persist"})
      */
     private $hideouts;
 

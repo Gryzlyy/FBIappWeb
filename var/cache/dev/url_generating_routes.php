@@ -19,7 +19,8 @@ return [
     'agents' => [[], ['_controller' => 'App\\Controller\\AgentsController::index'], [], [['text', '/agents']], [], []],
     'contacts' => [[], ['_controller' => 'App\\Controller\\ContactsController::index'], [], [['text', '/contacts']], [], []],
     'hideouts' => [[], ['_controller' => 'App\\Controller\\HideoutsController::index'], [], [['text', '/hideouts']], [], []],
-    'missions' => [[], ['_controller' => 'App\\Controller\\MissionsController::index'], [], [['text', '/missions']], [], []],
+    'app.home' => [[], ['_controller' => 'App\\Controller\\MissionsController::index'], [], [['text', '/']], [], []],
+    'mission_details' => [['id'], ['_controller' => 'App\\Controller\\MissionsController::showMission'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/missions']], [], []],
     'skills' => [[], ['_controller' => 'App\\Controller\\SkillsController::index'], [], [['text', '/skills']], [], []],
     'targets' => [[], ['_controller' => 'App\\Controller\\TargetsController::index'], [], [['text', '/targets']], [], []],
 ];
