@@ -210,6 +210,10 @@ class __TwigTemplate_9d499b1e85d3e2c4072396860d7d73950b994e41b801c259c6182016bc0
 
         </tbody>
     </table>
+    <a href=\"";
+        // line 67
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app.home");
+        echo "\">Back to missions' index</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -231,7 +235,7 @@ class __TwigTemplate_9d499b1e85d3e2c4072396860d7d73950b994e41b801c259c6182016bc0
 
     public function getDebugInfo()
     {
-        return array (  209 => 63,  200 => 61,  196 => 60,  191 => 57,  182 => 55,  178 => 54,  173 => 51,  164 => 49,  160 => 48,  153 => 44,  146 => 40,  139 => 36,  132 => 32,  125 => 28,  118 => 24,  111 => 20,  104 => 16,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  215 => 67,  209 => 63,  200 => 61,  196 => 60,  191 => 57,  182 => 55,  178 => 54,  173 => 51,  164 => 49,  160 => 48,  153 => 44,  146 => 40,  139 => 36,  132 => 32,  125 => 28,  118 => 24,  111 => 20,  104 => 16,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -302,6 +306,7 @@ class __TwigTemplate_9d499b1e85d3e2c4072396860d7d73950b994e41b801c259c6182016bc0
 
         </tbody>
     </table>
+    <a href=\"{{ path('app.home') }}\">Back to missions' index</a>
 {% endblock %}", "missions/showMission.html.twig", "/Users/paulfaguet/Desktop/FBI_APP/templates/missions/showMission.html.twig");
     }
 }
