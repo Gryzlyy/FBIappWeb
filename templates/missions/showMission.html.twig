@@ -58,12 +58,10 @@
                 {% endfor %}
             </tr>
             <tr>
-                <th><a href="#" style="color: black">Contacts</a></th>
+                <th><a href="{{ path("contacts_index") }}" style="color: black">Contacts</a></th>
                 {% for contact in mission.contacts %}
                     <td>
-                        {{ contact.codeName }}
-                        <br>
-                        <a href="{{ path('agent_details', {'id': agent.id}) }}">See contact's details</a>
+                        <a href="{{ path('contact_details', {'id': contact.id}) }}">{{ contact.codeName }}</a>
                     </td>
                 {% endfor %}
             </tr>

@@ -198,7 +198,10 @@ class __TwigTemplate_286f523a62c416847771021a2ce33d98e74f08e975cb9063101596b91e6
         // line 59
         echo "            </tr>
             <tr>
-                <th><a href=\"#\" style=\"color: black\">Contacts</a></th>
+                <th><a href=\"";
+        // line 61
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contacts_index");
+        echo "\" style=\"color: black\">Contacts</a></th>
                 ";
         // line 62
         $context['_parent'] = $context;
@@ -206,29 +209,26 @@ class __TwigTemplate_286f523a62c416847771021a2ce33d98e74f08e975cb9063101596b91e6
         foreach ($context['_seq'] as $context["_key"] => $context["contact"]) {
             // line 63
             echo "                    <td>
-                        ";
-            // line 64
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "codeName", [], "any", false, false, false, 64), "html", null, true);
-            echo "
-                        <br>
                         <a href=\"";
-            // line 66
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("agent_details", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["agent"]) || array_key_exists("agent", $context) ? $context["agent"] : (function () { throw new RuntimeError('Variable "agent" does not exist.', 66, $this->source); })()), "id", [], "any", false, false, false, 66)]), "html", null, true);
-            echo "\">See contact's details</a>
+            // line 64
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_details", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 64)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "codeName", [], "any", false, false, false, 64), "html", null, true);
+            echo "</a>
                     </td>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['contact'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 67
         echo "            </tr>
 
         </tbody>
     </table>
     <button class=\"btn btn-lg btn-warning mt-3 mx-2\">
         <a href=\"";
-        // line 74
+        // line 72
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app.home");
         echo "\" style=\"color: white; text-decoration: none\">Back to missions' index</a>
     </button>
@@ -253,7 +253,7 @@ class __TwigTemplate_286f523a62c416847771021a2ce33d98e74f08e975cb9063101596b91e6
 
     public function getDebugInfo()
     {
-        return array (  232 => 74,  225 => 69,  216 => 66,  211 => 64,  208 => 63,  204 => 62,  199 => 59,  190 => 57,  186 => 56,  181 => 53,  170 => 50,  167 => 49,  163 => 48,  159 => 47,  153 => 44,  146 => 40,  139 => 36,  132 => 32,  125 => 28,  118 => 24,  111 => 20,  104 => 16,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  232 => 72,  225 => 67,  214 => 64,  211 => 63,  207 => 62,  203 => 61,  199 => 59,  190 => 57,  186 => 56,  181 => 53,  170 => 50,  167 => 49,  163 => 48,  159 => 47,  153 => 44,  146 => 40,  139 => 36,  132 => 32,  125 => 28,  118 => 24,  111 => 20,  104 => 16,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -318,12 +318,10 @@ class __TwigTemplate_286f523a62c416847771021a2ce33d98e74f08e975cb9063101596b91e6
                 {% endfor %}
             </tr>
             <tr>
-                <th><a href=\"#\" style=\"color: black\">Contacts</a></th>
+                <th><a href=\"{{ path(\"contacts_index\") }}\" style=\"color: black\">Contacts</a></th>
                 {% for contact in mission.contacts %}
                     <td>
-                        {{ contact.codeName }}
-                        <br>
-                        <a href=\"{{ path('agent_details', {'id': agent.id}) }}\">See contact's details</a>
+                        <a href=\"{{ path('contact_details', {'id': contact.id}) }}\">{{ contact.codeName }}</a>
                     </td>
                 {% endfor %}
             </tr>

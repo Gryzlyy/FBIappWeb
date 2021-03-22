@@ -20,7 +20,7 @@ class AgentsController extends AbstractController
     /**
      * @Route ("/agents/{id}", name="agent_details")
      */
-    public function showMission(int $id, AgentsRepository $agentsRepository): Response
+    public function showAgent(int $id, AgentsRepository $agentsRepository): Response
     {
         return $this->render('agents/showAgent.html.twig', [
             'agent' => $agentsRepository->find($id),

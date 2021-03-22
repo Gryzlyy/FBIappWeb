@@ -1,0 +1,52 @@
+{% extends 'missions/index.html.twig' %}
+
+
+{% block title %}
+    {{ contact.codeName }} - {{ contact.firstname }} {{ contact.lastname }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>{{ contact.codeName }}</h1>
+
+    <table class="table table-hover table-responsive text-justify align-middle">
+        <tbody>
+        <tr>
+            <th>Lastname</th>
+            <td>{{ contact.lastName }}</td>
+        </tr>
+        <tr>
+            <th>Firstname</th>
+            <td>{{ contact.firstName }}</td>
+        </tr>
+        <tr>
+            <th>Codename</th>
+            <td>{{ contact.codeName }}</td>
+        </tr>
+        <tr>
+            <th>Nationality</th>
+            <td>{{ contact.nationality }}</td>
+        </tr>
+        <tr>
+            <th>Birth Date</th>
+            <td>{{ contact.birthDate }}</td>
+        </tr>
+        <tr>
+            <th><a href="{{ path('app.home') }}">Missions</a></th>
+            {% for mission in contact.missions %}
+                <td>
+                    <a href="{{ path('mission_details', {'id': mission.id}) }}">
+                        {{ mission.title }}
+                    </a>
+                </td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-lg btn-warning mt-3 mx-2">
+        <a href="{{ path('app.home') }}" style="color: white; text-decoration: none">Back to missions' index</a>
+    </button>
+    <button class="btn btn-lg btn-primary mt-3 mx-2">
+        <a href="{{ path('contacts_index') }}" style="color: white; text-decoration: none">Back to contacts' index</a>
+    </button>
+{% endblock %}
