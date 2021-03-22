@@ -1,0 +1,57 @@
+{% extends 'missions/index.html.twig' %}
+
+
+{% block title %}
+    {{ target.codeName }}
+{% endblock %}
+
+{% block body %}
+
+    {% include "_header.html.twig" %}
+
+    <h1 class="p-2 mt-4">{{ target.codeName }} - {{ target.firstname }} {{ target.lastname }}</h1>
+
+    <table class="table table-hover table-responsive text-justify align-middle mx-5" style="max-width:40em">
+        <tbody>
+        <tr>
+            <th>Lastname</th>
+            <td>{{ target.lastName }}</td>
+        </tr>
+        <tr>
+            <th>Firstname</th>
+            <td>{{ target.firstName }}</td>
+        </tr>
+        <tr>
+            <th>Codename</th>
+            <td>{{ target.codeName }}</td>
+        </tr>
+        <tr>
+            <th>Nationality</th>
+            <td>{{ target.nationality }}</td>
+        </tr>
+        <tr>
+            <th><a href="{{ path('app.home') }}">Missions</a></th>
+            <td>
+                {% for mission in target.missions %}
+                        <a href="{{ path('mission_details', {'id': mission.id}) }}">
+                            {{ mission.title }} </td>
+                        </a>
+                {% endfor %}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-md btn-primary mx-5">
+        <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
+            Sign in
+        </a>
+    </button>
+
+    {#  {% if is_granted('ROLE_ADMIN') %} #}
+    <button class="btn btn-md btn-success mx-2">
+        <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
+            Add a target
+        </a>
+    </button>
+    {#  {% endif %}#}
+{% endblock %}

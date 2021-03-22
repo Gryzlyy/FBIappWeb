@@ -7,9 +7,11 @@
 
 {% block body %}
 
-    <h1>{{ mission.title }}</h1>
+    {% include "_header.html.twig" %}
 
-    <table class="table table-hover table-responsive text-justify align-middle">
+    <h1 class="p-2 mt-4">{{ mission.title }}</h1>
+<div>
+    <table class="table table-hover table-responsive text-justify align-middle mx-5" style="max-width:40em">
         <tbody>
             <tr>
                 <th>Title</th>
@@ -45,30 +47,48 @@
             </tr>
             <tr>
                 <th><a href="{{ path('agents_index') }}" style="color: black">Agents</a></th>
+                <td>
                     {% for agent in mission.agents %}
-                        <td>
-                            <a href="{{ path('agent_details', {'id': agent.id}) }}">{{ agent.codeName }}</a>
-                        </td>
+
+                            <a href="{{ path('agent_details', {'id': agent.id}) }}">
+                                {{ agent.codeName }} <br>
+                            </a>
                     {% endfor %}
+                </td>
             </tr>
             <tr>
-                <th><a href="#" style="color: black">Targets</a></th>
-                {% for target in mission.targets %}
-                    <td>{{ target.codeName }}</td>
-                {% endfor %}
+                <th><a href="{{ path('targets_index') }}" style="color: black">Targets</a></th>
+                <td>
+                    {% for target in mission.targets %}
+                            <a href="{{ path('target_details', {'id': target.id}) }}">
+                                {{ target.codeName }} <br>
+                            </a>
+                    {% endfor %}
+                </td>
             </tr>
             <tr>
                 <th><a href="{{ path("contacts_index") }}" style="color: black">Contacts</a></th>
-                {% for contact in mission.contacts %}
-                    <td>
-                        <a href="{{ path('contact_details', {'id': contact.id}) }}">{{ contact.codeName }}</a>
+                <td>
+                    {% for contact in mission.contacts %}
+                            <a href="{{ path('contact_details', {'id': contact.id}) }}">
+                                {{ contact.codeName }} <br>
+                            </a>
+                    {% endfor %}
                     </td>
-                {% endfor %}
             </tr>
-
         </tbody>
     </table>
-    <button class="btn btn-lg btn-warning mt-3 mx-2">
-        <a href="{{ path('app.home') }}" style="color: white; text-decoration: none">Back to missions' index</a>
+    <button class="btn btn-md btn-primary mx-5">
+        <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
+            Sign in
+        </a>
     </button>
+
+    {#  {% if is_granted('ROLE_ADMIN') %} #}
+    <button class="btn btn-md btn-success mx-2">
+        <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
+            Add a mission
+        </a>
+    </button>
+    {#  {% endif %}#}
 {% endblock %}

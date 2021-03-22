@@ -87,18 +87,18 @@ class __TwigTemplate_a14c9ea5d7eddae9e567ecf94382f1d9c2c11ecdffcd40dab2c1a14fa35
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
+        echo "    ";
+        $this->loadTemplate("_header.html.twig", "contacts/index.html.twig", 8)->display($context);
+        // line 9
         echo "
-    <h1>Contacts' index</h1>
+    <h1 class=\"p-2 mt-4\">Contacts' index</h1>
 
     <table class=\"table table-hover table-responsive text-center align-middle\">
         <thead>
         <tr>
             <th scope=\"col\">#</th>
             <th scope=\"col\">Codename</th>
-            <th scope=\"col\">Lastname</th>
-            <th scope=\"col\">Firstname</th>
             <th scope=\"col\">Nationality</th>
-            <th scope=\"col\">Birth Date</th>
             <th scope=\"col\">Missions</th>
             <th scope=\"col\">Actions</th>
         </tr>
@@ -106,67 +106,55 @@ class __TwigTemplate_a14c9ea5d7eddae9e567ecf94382f1d9c2c11ecdffcd40dab2c1a14fa35
         <tbody>
 
         ";
-        // line 26
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["contacts"]) || array_key_exists("contacts", $context) ? $context["contacts"] : (function () { throw new RuntimeError('Variable "contacts" does not exist.', 26, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["contacts"]) || array_key_exists("contacts", $context) ? $context["contacts"] : (function () { throw new RuntimeError('Variable "contacts" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["contact"]) {
-            // line 27
+            // line 25
             echo "
             <tr>
 
                 <th scope=\"row\">";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 30), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 28), "html", null, true);
             echo "</th>
                 <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "codeName", [], "any", false, false, false, 31), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "codeName", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
                 <td>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "lastName", [], "any", false, false, false, 32), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "firstName", [], "any", false, false, false, 33), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "nationality", [], "any", false, false, false, 34), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "birthDate", [], "any", false, false, false, 35), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["contact"], "nationality", [], "any", false, false, false, 30), "html", null, true);
             echo "</td>
                 <td>
                     ";
-            // line 37
+            // line 32
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["contact"], "missions", [], "any", false, false, false, 37));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["contact"], "missions", [], "any", false, false, false, 32));
             foreach ($context['_seq'] as $context["_key"] => $context["mission"]) {
-                // line 38
+                // line 33
                 echo "                        ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "title", [], "any", false, false, false, 38), "html", null, true);
-                echo "
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "title", [], "any", false, false, false, 33), "html", null, true);
+                echo " <br>
                     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mission'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 40
+            // line 35
             echo "                </td>
 
                 <td>
                     <a href=\"";
-            // line 43
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_details", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 43)]), "html", null, true);
+            // line 38
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_details", ["id" => twig_get_attribute($this->env, $this->source, $context["contact"], "id", [], "any", false, false, false, 38)]), "html", null, true);
             echo "\" style=\"color: black\">See more</a><br>
                     ";
-            // line 44
+            // line 39
             echo " ";
-            // line 57
+            // line 52
             echo " ";
-            // line 59
+            // line 54
             echo "
             </tr>
 
@@ -175,14 +163,14 @@ class __TwigTemplate_a14c9ea5d7eddae9e567ecf94382f1d9c2c11ecdffcd40dab2c1a14fa35
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['contact'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 63
+        // line 58
         echo "
         </tbody>
     </table>
 
-    <button class=\"btn btn-lg btn-primary\">
+    <button class=\"btn btn-md btn-primary mx-4\">
         <a href=\"";
-        // line 68
+        // line 63
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\" style=\"color: white; text-decoration: none\">
             Sign in
@@ -190,15 +178,17 @@ class __TwigTemplate_a14c9ea5d7eddae9e567ecf94382f1d9c2c11ecdffcd40dab2c1a14fa35
     </button>
 
     ";
-        // line 74
-        echo "    <button class=\"btn btn-lg btn-success mx-5\">
-        <a href=\"#\" style=\"color: white; text-decoration: none\">
+        // line 69
+        echo "    <button class=\"btn btn-md btn-success mx-2\">
+        <a href=\"";
+        // line 70
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\" style=\"color: white; text-decoration: none\">
             Add a contact
         </a>
     </button>
-
     ";
-        // line 81
+        // line 75
         echo "
 ";
         
@@ -221,7 +211,7 @@ class __TwigTemplate_a14c9ea5d7eddae9e567ecf94382f1d9c2c11ecdffcd40dab2c1a14fa35
 
     public function getDebugInfo()
     {
-        return array (  202 => 81,  194 => 74,  186 => 68,  179 => 63,  170 => 59,  168 => 57,  166 => 44,  162 => 43,  157 => 40,  148 => 38,  144 => 37,  139 => 35,  135 => 34,  131 => 33,  127 => 32,  123 => 31,  119 => 30,  114 => 27,  110 => 26,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  192 => 75,  185 => 70,  182 => 69,  174 => 63,  167 => 58,  158 => 54,  156 => 52,  154 => 39,  150 => 38,  145 => 35,  136 => 33,  132 => 32,  127 => 30,  123 => 29,  119 => 28,  114 => 25,  110 => 24,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -233,18 +223,16 @@ class __TwigTemplate_a14c9ea5d7eddae9e567ecf94382f1d9c2c11ecdffcd40dab2c1a14fa35
 {% endblock %}
 
 {% block body %}
+    {% include \"_header.html.twig\" %}
 
-    <h1>Contacts' index</h1>
+    <h1 class=\"p-2 mt-4\">Contacts' index</h1>
 
     <table class=\"table table-hover table-responsive text-center align-middle\">
         <thead>
         <tr>
             <th scope=\"col\">#</th>
             <th scope=\"col\">Codename</th>
-            <th scope=\"col\">Lastname</th>
-            <th scope=\"col\">Firstname</th>
             <th scope=\"col\">Nationality</th>
-            <th scope=\"col\">Birth Date</th>
             <th scope=\"col\">Missions</th>
             <th scope=\"col\">Actions</th>
         </tr>
@@ -257,13 +245,10 @@ class __TwigTemplate_a14c9ea5d7eddae9e567ecf94382f1d9c2c11ecdffcd40dab2c1a14fa35
 
                 <th scope=\"row\">{{ contact.id }}</th>
                 <td>{{ contact.codeName }}</td>
-                <td>{{ contact.lastName }}</td>
-                <td>{{ contact.firstName }}</td>
                 <td>{{ contact.nationality }}</td>
-                <td>{{ contact.birthDate }}</td>
                 <td>
                     {% for mission in contact.missions %}
-                        {{ mission.title }}
+                        {{ mission.title }} <br>
                     {% endfor %}
                 </td>
 
@@ -292,19 +277,18 @@ class __TwigTemplate_a14c9ea5d7eddae9e567ecf94382f1d9c2c11ecdffcd40dab2c1a14fa35
         </tbody>
     </table>
 
-    <button class=\"btn btn-lg btn-primary\">
+    <button class=\"btn btn-md btn-primary mx-4\">
         <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
             Sign in
         </a>
     </button>
 
     {#  {% if is_granted('ROLE_ADMIN') %} #}
-    <button class=\"btn btn-lg btn-success mx-5\">
-        <a href=\"#\" style=\"color: white; text-decoration: none\">
+    <button class=\"btn btn-md btn-success mx-2\">
+        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
             Add a contact
         </a>
     </button>
-
     {#  {% endif %}#}
 
 {% endblock %}

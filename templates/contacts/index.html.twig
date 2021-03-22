@@ -5,18 +5,16 @@
 {% endblock %}
 
 {% block body %}
+    {% include "_header.html.twig" %}
 
-    <h1>Contacts' index</h1>
+    <h1 class="p-2 mt-4">Contacts' index</h1>
 
     <table class="table table-hover table-responsive text-center align-middle">
         <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Codename</th>
-            <th scope="col">Lastname</th>
-            <th scope="col">Firstname</th>
             <th scope="col">Nationality</th>
-            <th scope="col">Birth Date</th>
             <th scope="col">Missions</th>
             <th scope="col">Actions</th>
         </tr>
@@ -29,13 +27,10 @@
 
                 <th scope="row">{{ contact.id }}</th>
                 <td>{{ contact.codeName }}</td>
-                <td>{{ contact.lastName }}</td>
-                <td>{{ contact.firstName }}</td>
                 <td>{{ contact.nationality }}</td>
-                <td>{{ contact.birthDate }}</td>
                 <td>
                     {% for mission in contact.missions %}
-                        {{ mission.title }}
+                        {{ mission.title }} <br>
                     {% endfor %}
                 </td>
 
@@ -64,19 +59,18 @@
         </tbody>
     </table>
 
-    <button class="btn btn-lg btn-primary">
+    <button class="btn btn-md btn-primary mx-4">
         <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
             Sign in
         </a>
     </button>
 
     {#  {% if is_granted('ROLE_ADMIN') %} #}
-    <button class="btn btn-lg btn-success mx-5">
-        <a href="#" style="color: white; text-decoration: none">
+    <button class="btn btn-md btn-success mx-2">
+        <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
             Add a contact
         </a>
     </button>
-
     {#  {% endif %}#}
 
 {% endblock %}

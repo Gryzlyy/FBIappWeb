@@ -68,10 +68,6 @@ class __TwigTemplate_5994dfbd2b2bb997f1ea342f38752c9ac71707dabffae8d8c9cbe7b462e
         // line 5
         echo "    ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 5, $this->source); })()), "codeName", [], "any", false, false, false, 5), "html", null, true);
-        echo " - ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 5, $this->source); })()), "firstname", [], "any", false, false, false, 5), "html", null, true);
-        echo " ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 5, $this->source); })()), "lastname", [], "any", false, false, false, 5), "html", null, true);
         echo "
 ";
         
@@ -94,92 +90,107 @@ class __TwigTemplate_5994dfbd2b2bb997f1ea342f38752c9ac71707dabffae8d8c9cbe7b462e
 
         // line 9
         echo "
-    <h1>";
+    ";
         // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 10, $this->source); })()), "codeName", [], "any", false, false, false, 10), "html", null, true);
+        $this->loadTemplate("_header.html.twig", "contacts/showContact.html.twig", 10)->display($context);
+        // line 11
+        echo "
+    <h1 class=\"p-2 mt-4\">";
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 12, $this->source); })()), "codeName", [], "any", false, false, false, 12), "html", null, true);
+        echo " - ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 12, $this->source); })()), "firstname", [], "any", false, false, false, 12), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 12, $this->source); })()), "lastname", [], "any", false, false, false, 12), "html", null, true);
         echo "</h1>
 
-    <table class=\"table table-hover table-responsive text-justify align-middle\">
+    <table class=\"table table-hover table-responsive text-justify align-middle mx-5\" style=\"max-width:40em\">
         <tbody>
         <tr>
             <th>Lastname</th>
             <td>";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 16, $this->source); })()), "lastName", [], "any", false, false, false, 16), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 18, $this->source); })()), "lastName", [], "any", false, false, false, 18), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th>Firstname</th>
             <td>";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 20, $this->source); })()), "firstName", [], "any", false, false, false, 20), "html", null, true);
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 22, $this->source); })()), "firstName", [], "any", false, false, false, 22), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th>Codename</th>
             <td>";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 24, $this->source); })()), "codeName", [], "any", false, false, false, 24), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 26, $this->source); })()), "codeName", [], "any", false, false, false, 26), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th>Nationality</th>
             <td>";
-        // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 28, $this->source); })()), "nationality", [], "any", false, false, false, 28), "html", null, true);
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 30, $this->source); })()), "nationality", [], "any", false, false, false, 30), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th>Birth Date</th>
             <td>";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 32, $this->source); })()), "birthDate", [], "any", false, false, false, 32), "html", null, true);
+        // line 34
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 34, $this->source); })()), "birthDate", [], "any", false, false, false, 34), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th><a href=\"";
-        // line 35
+        // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app.home");
         echo "\">Missions</a></th>
-            ";
-        // line 36
+            <td>
+                ";
+        // line 39
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 36, $this->source); })()), "missions", [], "any", false, false, false, 36));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 39, $this->source); })()), "missions", [], "any", false, false, false, 39));
         foreach ($context['_seq'] as $context["_key"] => $context["mission"]) {
-            // line 37
-            echo "                <td>
-                    <a href=\"";
-            // line 38
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission_details", ["id" => twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 38)]), "html", null, true);
+            // line 40
+            echo "                        <a href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission_details", ["id" => twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 40)]), "html", null, true);
             echo "\">
-                        ";
-            // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "title", [], "any", false, false, false, 39), "html", null, true);
-            echo "
-                    </a>
-                </td>
-            ";
+                            ";
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "title", [], "any", false, false, false, 41), "html", null, true);
+            echo " <br>
+                        </a>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mission'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
-        echo "        </tr>
+        // line 44
+        echo "            </td>
+        </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-lg btn-warning mt-3 mx-2\">
+    <button class=\"btn btn-md btn-primary mx-5\">
         <a href=\"";
-        // line 47
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app.home");
-        echo "\" style=\"color: white; text-decoration: none\">Back to missions' index</a>
+        // line 49
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\" style=\"color: white; text-decoration: none\">
+            Sign in
+        </a>
     </button>
-    <button class=\"btn btn-lg btn-primary mt-3 mx-2\">
+
+    ";
+        // line 55
+        echo "    <button class=\"btn btn-md btn-success mx-2\">
         <a href=\"";
-        // line 50
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contacts_index");
-        echo "\" style=\"color: white; text-decoration: none\">Back to contacts' index</a>
+        // line 56
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\" style=\"color: white; text-decoration: none\">
+            Add a contact
+        </a>
     </button>
-";
+    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -200,7 +211,7 @@ class __TwigTemplate_5994dfbd2b2bb997f1ea342f38752c9ac71707dabffae8d8c9cbe7b462e
 
     public function getDebugInfo()
     {
-        return array (  179 => 50,  173 => 47,  167 => 43,  157 => 39,  153 => 38,  150 => 37,  146 => 36,  142 => 35,  136 => 32,  129 => 28,  122 => 24,  115 => 20,  108 => 16,  99 => 10,  96 => 9,  86 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  188 => 56,  185 => 55,  177 => 49,  170 => 44,  161 => 41,  156 => 40,  152 => 39,  147 => 37,  141 => 34,  134 => 30,  127 => 26,  120 => 22,  113 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -209,14 +220,16 @@ class __TwigTemplate_5994dfbd2b2bb997f1ea342f38752c9ac71707dabffae8d8c9cbe7b462e
 
 
 {% block title %}
-    {{ contact.codeName }} - {{ contact.firstname }} {{ contact.lastname }}
+    {{ contact.codeName }}
 {% endblock %}
 
 {% block body %}
 
-    <h1>{{ contact.codeName }}</h1>
+    {% include \"_header.html.twig\" %}
 
-    <table class=\"table table-hover table-responsive text-justify align-middle\">
+    <h1 class=\"p-2 mt-4\">{{ contact.codeName }} - {{ contact.firstname }} {{ contact.lastname }}</h1>
+
+    <table class=\"table table-hover table-responsive text-justify align-middle mx-5\" style=\"max-width:40em\">
         <tbody>
         <tr>
             <th>Lastname</th>
@@ -240,22 +253,29 @@ class __TwigTemplate_5994dfbd2b2bb997f1ea342f38752c9ac71707dabffae8d8c9cbe7b462e
         </tr>
         <tr>
             <th><a href=\"{{ path('app.home') }}\">Missions</a></th>
-            {% for mission in contact.missions %}
-                <td>
-                    <a href=\"{{ path('mission_details', {'id': mission.id}) }}\">
-                        {{ mission.title }}
-                    </a>
-                </td>
-            {% endfor %}
+            <td>
+                {% for mission in contact.missions %}
+                        <a href=\"{{ path('mission_details', {'id': mission.id}) }}\">
+                            {{ mission.title }} <br>
+                        </a>
+                {% endfor %}
+            </td>
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-lg btn-warning mt-3 mx-2\">
-        <a href=\"{{ path('app.home') }}\" style=\"color: white; text-decoration: none\">Back to missions' index</a>
+    <button class=\"btn btn-md btn-primary mx-5\">
+        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
+            Sign in
+        </a>
     </button>
-    <button class=\"btn btn-lg btn-primary mt-3 mx-2\">
-        <a href=\"{{ path('contacts_index') }}\" style=\"color: white; text-decoration: none\">Back to contacts' index</a>
+
+    {#  {% if is_granted('ROLE_ADMIN') %} #}
+    <button class=\"btn btn-md btn-success mx-2\">
+        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
+            Add a contact
+        </a>
     </button>
+    {#  {% endif %}#}
 {% endblock %}", "contacts/showContact.html.twig", "/Users/paulfaguet/Desktop/FBI_APP/templates/contacts/showContact.html.twig");
     }
 }

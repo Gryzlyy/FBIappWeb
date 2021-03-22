@@ -15,12 +15,12 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/agents' => [[['_route' => 'agents_index', '_controller' => 'App\\Controller\\AgentsController::index'], null, null, null, false, false, null]],
         '/contacts' => [[['_route' => 'contacts_index', '_controller' => 'App\\Controller\\ContactsController::index'], null, null, null, false, false, null]],
-        '/hideouts' => [[['_route' => 'hideouts', '_controller' => 'App\\Controller\\HideoutsController::index'], null, null, null, false, false, null]],
+        '/hideouts' => [[['_route' => 'hideouts_index', '_controller' => 'App\\Controller\\HideoutsController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app.home', '_controller' => 'App\\Controller\\MissionsController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
-        '/skills' => [[['_route' => 'skills', '_controller' => 'App\\Controller\\SkillsController::index'], null, null, null, false, false, null]],
-        '/targets' => [[['_route' => 'targets', '_controller' => 'App\\Controller\\TargetsController::index'], null, null, null, false, false, null]],
+        '/skills' => [[['_route' => 'skills_index', '_controller' => 'App\\Controller\\SkillsController::index'], null, null, null, false, false, null]],
+        '/targets' => [[['_route' => 'targets_index', '_controller' => 'App\\Controller\\TargetsController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -41,7 +41,10 @@ return [
                 .')'
                 .'|/agents/([^/]++)(*:185)'
                 .'|/contacts/([^/]++)(*:211)'
-                .'|/missions/([^/]++)(*:237)'
+                .'|/hideouts/([^/]++)(*:237)'
+                .'|/missions/([^/]++)(*:263)'
+                .'|/skills/([^/]++)(*:287)'
+                .'|/targets/([^/]++)(*:312)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -54,8 +57,11 @@ return [
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         185 => [[['_route' => 'agent_details', '_controller' => 'App\\Controller\\AgentsController::showAgent'], ['id'], null, null, false, true, null]],
         211 => [[['_route' => 'contact_details', '_controller' => 'App\\Controller\\ContactsController::showContact'], ['id'], null, null, false, true, null]],
-        237 => [
-            [['_route' => 'mission_details', '_controller' => 'App\\Controller\\MissionsController::showMission'], ['id'], null, null, false, true, null],
+        237 => [[['_route' => 'hideout_details', '_controller' => 'App\\Controller\\HideoutsController::showHideout'], ['id'], null, null, false, true, null]],
+        263 => [[['_route' => 'mission_details', '_controller' => 'App\\Controller\\MissionsController::showMission'], ['id'], null, null, false, true, null]],
+        287 => [[['_route' => 'skill_details', '_controller' => 'App\\Controller\\SkillsController::showSkill'], ['id'], null, null, false, true, null]],
+        312 => [
+            [['_route' => 'target_details', '_controller' => 'App\\Controller\\TargetsController::showAgent'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

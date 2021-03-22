@@ -2,14 +2,16 @@
 
 
 {% block title %}
-    {{ agent.codeName }} - {{ agent.firstname }} {{ agent.lastname }}
+    {{ agent.codeName }}
 {% endblock %}
 
 {% block body %}
 
-    <h1>{{ agent.codeName }}</h1>
+    {% include "_header.html.twig" %}
 
-    <table class="table table-hover table-responsive text-justify align-middle">
+    <h1 class="p-2 mt-4">{{ agent.codeName }} - {{ agent.firstname }} {{ agent.lastname }}</h1>
+
+    <table class="table table-hover table-responsive text-justify align-middle mx-5" style="max-width:40em">
         <tbody>
         <tr>
             <th>Lastname</th>
@@ -29,26 +31,35 @@
         </tr>
         <tr>
             <th>Skills</th>
-            {% for skill in agent.skills %}
-                <td>{{ skill.name }}</td>
-            {% endfor %}
+            <td>
+                {% for skill in agent.skills %}
+                    {{ skill.name }} <br>
+                {% endfor %}
+            </td>
         </tr>
         <tr>
             <th><a href="{{ path('app.home') }}">Missions</a></th>
-            {% for mission in agent.missions %}
-                <td>
-                    <a href="{{ path('mission_details', {'id': mission.id}) }}">
-                        {{ mission.title }}
-                    </a>
-                </td>
-            {% endfor %}
+            <td>
+                {% for mission in agent.missions %}
+                        <a href="{{ path('mission_details', {'id': mission.id}) }}">
+                            {{ mission.title }} <br>
+                        </a>
+                {% endfor %}
+            </td>
         </tr>
         </tbody>
     </table>
-    <button class="btn btn-lg btn-warning mt-3 mx-2">
-        <a href="{{ path('app.home') }}" style="color: white; text-decoration: none">Back to missions' index</a>
+    <button class="btn btn-md btn-primary mx-5">
+        <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
+            Sign in
+        </a>
     </button>
-    <button class="btn btn-lg btn-primary mt-3 mx-2">
-        <a href="{{ path('agents_index') }}" style="color: white; text-decoration: none">Back to agents' index</a>
+
+    {#  {% if is_granted('ROLE_ADMIN') %} #}
+    <button class="btn btn-md btn-success mx-2">
+        <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
+            Add an agent
+        </a>
     </button>
+    {#  {% endif %}#}
 {% endblock %}

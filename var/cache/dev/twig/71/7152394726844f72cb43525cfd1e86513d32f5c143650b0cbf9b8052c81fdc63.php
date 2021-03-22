@@ -88,7 +88,12 @@ class __TwigTemplate_5923dfe5a34e8ce901c1edc654a811bc70eab0e8bf46c96359d38f951ac
 
         // line 8
         echo "
-    <h1>Mission's index</h1>
+    ";
+        // line 9
+        $this->loadTemplate("_header.html.twig", "missions/index.html.twig", 9)->display($context);
+        // line 10
+        echo "
+    <h1 class=\"p-2 mt-4\">Missions' index</h1>
 
     <table class=\"table table-hover table-responsive text-center align-middle\">
         <thead>
@@ -107,55 +112,55 @@ class __TwigTemplate_5923dfe5a34e8ce901c1edc654a811bc70eab0e8bf46c96359d38f951ac
         <tbody>
 
             ";
-        // line 27
+        // line 29
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["missions"]) || array_key_exists("missions", $context) ? $context["missions"] : (function () { throw new RuntimeError('Variable "missions" does not exist.', 27, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["missions"]) || array_key_exists("missions", $context) ? $context["missions"] : (function () { throw new RuntimeError('Variable "missions" does not exist.', 29, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["mission"]) {
-            // line 28
+            // line 30
             echo "
                 <tr>
 
                     <th scope=\"row\">";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 31), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 33), "html", null, true);
             echo "</th>
                     <td>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "status", [], "any", false, false, false, 32), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "title", [], "any", false, false, false, 33), "html", null, true);
-            echo "</td>
-                    <td>";
             // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "country", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "status", [], "any", false, false, false, 34), "html", null, true);
             echo "</td>
                     <td>";
             // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "type", [], "any", false, false, false, 35), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "title", [], "any", false, false, false, 35), "html", null, true);
             echo "</td>
-                    <td style=\"max-width: 20em\">";
+                    <td>";
             // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "description", [], "any", false, false, false, 36), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "country", [], "any", false, false, false, 36), "html", null, true);
             echo "</td>
                     <td>";
             // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "startDate", [], "any", false, false, false, 37), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "type", [], "any", false, false, false, 37), "html", null, true);
+            echo "</td>
+                    <td style=\"max-width: 20em\">";
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "description", [], "any", false, false, false, 38), "html", null, true);
             echo "</td>
                     <td>";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "endDate", [], "any", false, false, false, 38), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "startDate", [], "any", false, false, false, 39), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "endDate", [], "any", false, false, false, 40), "html", null, true);
             echo "</td>
                     <td>
                         <a href=\"";
-            // line 40
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission_details", ["id" => twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 40)]), "html", null, true);
+            // line 42
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission_details", ["id" => twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 42)]), "html", null, true);
             echo "\" style=\"color: black\">See more</a><br>
                         ";
-            // line 42
+            // line 44
             echo "                        <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission_details", ["id" => twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 42)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission_details", ["id" => twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 44)]), "html", null, true);
             echo "\" style=\"color: black; text-decoration: none;\">
                             <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-pencil-square m-2 text-center\" viewBox=\"0 0 16 16\">
                                 <path d=\"M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z\"/>
@@ -163,8 +168,8 @@ class __TwigTemplate_5923dfe5a34e8ce901c1edc654a811bc70eab0e8bf46c96359d38f951ac
                             </svg>
                         </a> <br>
                         <a href=\"";
-            // line 48
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission_details", ["id" => twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 48)]), "html", null, true);
+            // line 50
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission_details", ["id" => twig_get_attribute($this->env, $this->source, $context["mission"], "id", [], "any", false, false, false, 50)]), "html", null, true);
             echo "\" style=\"color: red; text-decoration: none\">
                             <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-trash text-center\" viewBox=\"0 0 16 16\">
                                 <path d=\"M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z\"/>
@@ -172,7 +177,7 @@ class __TwigTemplate_5923dfe5a34e8ce901c1edc654a811bc70eab0e8bf46c96359d38f951ac
                             </svg>
                         </a>
                         ";
-            // line 55
+            // line 57
             echo "                    </td>
 
                 </tr>
@@ -182,14 +187,14 @@ class __TwigTemplate_5923dfe5a34e8ce901c1edc654a811bc70eab0e8bf46c96359d38f951ac
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mission'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 60
+        // line 62
         echo "
         </tbody>
     </table>
 
-    <button class=\"btn btn-lg btn-primary\">
+    <button class=\"btn btn-md btn-primary mx-4\">
         <a href=\"";
-        // line 65
+        // line 67
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\" style=\"color: white; text-decoration: none\">
             Sign in
@@ -197,18 +202,17 @@ class __TwigTemplate_5923dfe5a34e8ce901c1edc654a811bc70eab0e8bf46c96359d38f951ac
     </button>
 
 ";
-        // line 71
-        echo "        <button class=\"btn btn-lg btn-success mx-5\">
+        // line 73
+        echo "        <button class=\"btn btn-md btn-success mx-2\">
             <a href=\"";
-        // line 72
+        // line 74
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\" style=\"color: white; text-decoration: none\">
                 Add a mission
             </a>
         </button>
-
 ";
-        // line 78
+        // line 79
         echo "
 ";
         
@@ -231,7 +235,7 @@ class __TwigTemplate_5923dfe5a34e8ce901c1edc654a811bc70eab0e8bf46c96359d38f951ac
 
     public function getDebugInfo()
     {
-        return array (  212 => 78,  204 => 72,  201 => 71,  193 => 65,  186 => 60,  176 => 55,  167 => 48,  157 => 42,  153 => 40,  148 => 38,  144 => 37,  140 => 36,  136 => 35,  132 => 34,  128 => 33,  124 => 32,  120 => 31,  115 => 28,  111 => 27,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  216 => 79,  209 => 74,  206 => 73,  198 => 67,  191 => 62,  181 => 57,  172 => 50,  162 => 44,  158 => 42,  153 => 40,  149 => 39,  145 => 38,  141 => 37,  137 => 36,  133 => 35,  129 => 34,  125 => 33,  120 => 30,  116 => 29,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -244,7 +248,9 @@ class __TwigTemplate_5923dfe5a34e8ce901c1edc654a811bc70eab0e8bf46c96359d38f951ac
 
 {% block body %}
 
-    <h1>Mission's index</h1>
+    {% include '_header.html.twig' %}
+
+    <h1 class=\"p-2 mt-4\">Missions' index</h1>
 
     <table class=\"table table-hover table-responsive text-center align-middle\">
         <thead>
@@ -299,19 +305,18 @@ class __TwigTemplate_5923dfe5a34e8ce901c1edc654a811bc70eab0e8bf46c96359d38f951ac
         </tbody>
     </table>
 
-    <button class=\"btn btn-lg btn-primary\">
+    <button class=\"btn btn-md btn-primary mx-4\">
         <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
             Sign in
         </a>
     </button>
 
 {#  {% if is_granted('ROLE_ADMIN') %} #}
-        <button class=\"btn btn-lg btn-success mx-5\">
+        <button class=\"btn btn-md btn-success mx-2\">
             <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
                 Add a mission
             </a>
         </button>
-
 {#  {% endif %}#}
 
 {% endblock %}

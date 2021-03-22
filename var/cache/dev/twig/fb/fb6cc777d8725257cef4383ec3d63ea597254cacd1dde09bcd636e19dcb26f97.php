@@ -63,7 +63,7 @@ class __TwigTemplate_1f9a67aa4b002d86c8074a3c103446dad4a6332f83f2c47f0c37975db94
         $this->displayBlock('javascripts', $context, $blocks);
         // line 15
         echo "    </head>
-    <body style=\"margin: 2%\">
+    <body>
         ";
         // line 17
         $this->displayBlock('body', $context, $blocks);
@@ -185,7 +185,7 @@ class __TwigTemplate_1f9a67aa4b002d86c8074a3c103446dad4a6332f83f2c47f0c37975db94
             <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0\" crossorigin=\"anonymous\"></script>
         {% endblock %}
     </head>
-    <body style=\"margin: 2%\">
+    <body>
         {% block body %}{% endblock %}
     </body>
 </html>

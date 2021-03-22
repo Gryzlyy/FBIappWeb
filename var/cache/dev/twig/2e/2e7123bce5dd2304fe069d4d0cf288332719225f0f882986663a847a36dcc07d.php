@@ -88,15 +88,18 @@ class __TwigTemplate_88d797acd614bda37fc943709ea1a3fd8604782666fd19bd76f108fbc59
 
         // line 8
         echo "
-    <h1>Agents' index</h1>
+    ";
+        // line 9
+        $this->loadTemplate("_header.html.twig", "agents/index.html.twig", 9)->display($context);
+        // line 10
+        echo "
+    <h1 class=\"p-2 mt-4\">Agents' index</h1>
 
     <table class=\"table table-hover table-responsive text-center align-middle\">
         <thead>
         <tr>
             <th scope=\"col\">#</th>
             <th scope=\"col\">Codename</th>
-            <th scope=\"col\">Lastname</th>
-            <th scope=\"col\">Firstname</th>
             <th scope=\"col\">Nationality</th>
             <th scope=\"col\">Skills</th>
             <th scope=\"col\">Missions</th>
@@ -124,78 +127,68 @@ class __TwigTemplate_88d797acd614bda37fc943709ea1a3fd8604782666fd19bd76f108fbc59
             echo "</td>
                 <td>";
             // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["agent"], "lastName", [], "any", false, false, false, 32), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["agent"], "firstName", [], "any", false, false, false, 33), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["agent"], "nationality", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["agent"], "nationality", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
                 <td>
                     ";
-            // line 36
+            // line 34
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["agent"], "skills", [], "any", false, false, false, 36));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["agent"], "skills", [], "any", false, false, false, 34));
             foreach ($context['_seq'] as $context["_key"] => $context["skill"]) {
-                // line 37
+                // line 35
                 echo "                        ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["skill"], "name", [], "any", false, false, false, 37), "html", null, true);
-                echo "
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["skill"], "name", [], "any", false, false, false, 35), "html", null, true);
+                echo " <br>
                     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['skill'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 39
+            // line 37
             echo "                </td>
                 <td>
                     ";
-            // line 41
+            // line 39
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["agent"], "missions", [], "any", false, false, false, 41));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["agent"], "missions", [], "any", false, false, false, 39));
             foreach ($context['_seq'] as $context["_key"] => $context["mission"]) {
-                // line 42
+                // line 40
                 echo "                        ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "title", [], "any", false, false, false, 42), "html", null, true);
-                echo "
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mission"], "title", [], "any", false, false, false, 40), "html", null, true);
+                echo " <br>
                     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mission'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 44
+            // line 42
             echo "                </td>
 
                 <td>
                         <a href=\"";
-            // line 47
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("agent_details", ["id" => twig_get_attribute($this->env, $this->source, $context["agent"], "id", [], "any", false, false, false, 47)]), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("agent_details", ["id" => twig_get_attribute($this->env, $this->source, $context["agent"], "id", [], "any", false, false, false, 45)]), "html", null, true);
             echo "\" style=\"color: black\">See more</a><br>
                     ";
-            // line 48
+            // line 46
+            echo " ";
+            // line 59
             echo " ";
             // line 61
-            echo " ";
-            // line 63
             echo "
             </tr>
-
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['agent'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 67
-        echo "
-        </tbody>
+        // line 64
+        echo "        </tbody>
     </table>
 
-    <button class=\"btn btn-lg btn-primary\">
+    <button class=\"btn btn-md btn-primary mx-4\">
         <a href=\"";
-        // line 72
+        // line 68
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\" style=\"color: white; text-decoration: none\">
             Sign in
@@ -203,15 +196,17 @@ class __TwigTemplate_88d797acd614bda37fc943709ea1a3fd8604782666fd19bd76f108fbc59
     </button>
 
     ";
-        // line 78
-        echo "    <button class=\"btn btn-lg btn-success mx-5\">
-        <a href=\"#\" style=\"color: white; text-decoration: none\">
+        // line 74
+        echo "    <button class=\"btn btn-md btn-success mx-2\">
+        <a href=\"";
+        // line 75
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\" style=\"color: white; text-decoration: none\">
             Add an agent
         </a>
     </button>
-
     ";
-        // line 85
+        // line 80
         echo "
 ";
         
@@ -234,7 +229,7 @@ class __TwigTemplate_88d797acd614bda37fc943709ea1a3fd8604782666fd19bd76f108fbc59
 
     public function getDebugInfo()
     {
-        return array (  215 => 85,  207 => 78,  199 => 72,  192 => 67,  183 => 63,  181 => 61,  179 => 48,  175 => 47,  170 => 44,  161 => 42,  157 => 41,  153 => 39,  144 => 37,  140 => 36,  135 => 34,  131 => 33,  127 => 32,  123 => 31,  119 => 30,  114 => 27,  110 => 26,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  210 => 80,  203 => 75,  200 => 74,  192 => 68,  186 => 64,  178 => 61,  176 => 59,  174 => 46,  170 => 45,  165 => 42,  156 => 40,  152 => 39,  148 => 37,  139 => 35,  135 => 34,  130 => 32,  126 => 31,  122 => 30,  117 => 27,  113 => 26,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -247,15 +242,15 @@ class __TwigTemplate_88d797acd614bda37fc943709ea1a3fd8604782666fd19bd76f108fbc59
 
 {% block body %}
 
-    <h1>Agents' index</h1>
+    {% include '_header.html.twig' %}
+
+    <h1 class=\"p-2 mt-4\">Agents' index</h1>
 
     <table class=\"table table-hover table-responsive text-center align-middle\">
         <thead>
         <tr>
             <th scope=\"col\">#</th>
             <th scope=\"col\">Codename</th>
-            <th scope=\"col\">Lastname</th>
-            <th scope=\"col\">Firstname</th>
             <th scope=\"col\">Nationality</th>
             <th scope=\"col\">Skills</th>
             <th scope=\"col\">Missions</th>
@@ -270,17 +265,15 @@ class __TwigTemplate_88d797acd614bda37fc943709ea1a3fd8604782666fd19bd76f108fbc59
 
                 <th scope=\"row\">{{ agent.id }}</th>
                 <td>{{ agent.codeName }}</td>
-                <td>{{ agent.lastName }}</td>
-                <td>{{ agent.firstName }}</td>
                 <td>{{ agent.nationality }}</td>
                 <td>
                     {% for skill in agent.skills %}
-                        {{ skill.name }}
+                        {{ skill.name }} <br>
                     {% endfor %}
                 </td>
                 <td>
                     {% for mission in agent.missions %}
-                        {{ mission.title }}
+                        {{ mission.title }} <br>
                     {% endfor %}
                 </td>
 
@@ -303,25 +296,22 @@ class __TwigTemplate_88d797acd614bda37fc943709ea1a3fd8604782666fd19bd76f108fbc59
                 </td> #}
 
             </tr>
-
         {% endfor %}
-
         </tbody>
     </table>
 
-    <button class=\"btn btn-lg btn-primary\">
+    <button class=\"btn btn-md btn-primary mx-4\">
         <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
             Sign in
         </a>
     </button>
 
     {#  {% if is_granted('ROLE_ADMIN') %} #}
-    <button class=\"btn btn-lg btn-success mx-5\">
-        <a href=\"#\" style=\"color: white; text-decoration: none\">
+    <button class=\"btn btn-md btn-success mx-2\">
+        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
             Add an agent
         </a>
     </button>
-
     {#  {% endif %}#}
 
 {% endblock %}
