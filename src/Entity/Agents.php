@@ -40,8 +40,7 @@ class Agents
     private $nationality;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Skills::class, mappedBy="agents")
-     * @ORM\JoinTable(name="skills_agents")
+     * @ORM\ManyToMany(targetEntity=Skills::class, mappedBy="agents", cascade={"persist"})
      */
     private $skills;
 

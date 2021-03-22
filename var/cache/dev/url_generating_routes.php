@@ -17,6 +17,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'agents_index' => [[], ['_controller' => 'App\\Controller\\AgentsController::index'], [], [['text', '/agents']], [], []],
     'agent_details' => [['id'], ['_controller' => 'App\\Controller\\AgentsController::showAgent'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/agents']], [], []],
+    'agent_add' => [[], ['_controller' => 'App\\Controller\\AgentsController::addAgent'], [], [['text', '/agents-add']], [], []],
     'contacts_index' => [[], ['_controller' => 'App\\Controller\\ContactsController::index'], [], [['text', '/contacts']], [], []],
     'contact_details' => [['id'], ['_controller' => 'App\\Controller\\ContactsController::showContact'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/contacts']], [], []],
     'hideouts_index' => [[], ['_controller' => 'App\\Controller\\HideoutsController::index'], [], [['text', '/hideouts']], [], []],

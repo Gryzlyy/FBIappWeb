@@ -30,7 +30,7 @@ class Skills
     private $description;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Agents::class, inversedBy="skills")
+     * @ORM\ManyToMany(targetEntity=Agents::class, inversedBy="skills", cascade={"persist"})
      */
     private $agents;
 
@@ -126,5 +126,10 @@ class Skills
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

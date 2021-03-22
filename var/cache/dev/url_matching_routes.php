@@ -14,6 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/agents' => [[['_route' => 'agents_index', '_controller' => 'App\\Controller\\AgentsController::index'], null, null, null, false, false, null]],
+        '/agents-add' => [[['_route' => 'agent_add', '_controller' => 'App\\Controller\\AgentsController::addAgent'], null, null, null, false, false, null]],
         '/contacts' => [[['_route' => 'contacts_index', '_controller' => 'App\\Controller\\ContactsController::index'], null, null, null, false, false, null]],
         '/hideouts' => [[['_route' => 'hideouts_index', '_controller' => 'App\\Controller\\HideoutsController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app.home', '_controller' => 'App\\Controller\\MissionsController::index'], null, null, null, false, false, null]],
