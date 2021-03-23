@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Contacts;
+use App\Form\AddContactType;
 use App\Repository\ContactsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -25,5 +28,27 @@ class ContactsController extends AbstractController
         return $this->render('contacts/showContact.html.twig', [
             'contact' => $contactsRepository->find($id),
     ]);
+    }
+
+    /**
+     * @Route ("/contacts-add", name="contact_add")
+     */
+    public function addSkill(Request $request): Response
+    {
+        $contact = new Contacts();
+        $form = $this->createForm(AddContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('contacts_index');
+        }
+
+        return $this->render('contacts/addContact.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 }

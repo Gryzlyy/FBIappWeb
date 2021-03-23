@@ -105,6 +105,7 @@ class __TwigTemplate_53fac5ca733b91c52b79fcdefe6d441d1669585473337aa1fa51bf428a1
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("skills_index");
         echo "\"> Skills </a>
                 </li>
+
             </ul>
         </div>
     </nav>
@@ -159,6 +160,7 @@ class __TwigTemplate_53fac5ca733b91c52b79fcdefe6d441d1669585473337aa1fa51bf428a1
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"{{ path('skills_index') }}\"> Skills </a>
                 </li>
+
             </ul>
         </div>
     </nav>

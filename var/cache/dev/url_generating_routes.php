@@ -20,6 +20,7 @@ return [
     'agent_add' => [[], ['_controller' => 'App\\Controller\\AgentsController::addAgent'], [], [['text', '/agents-add']], [], []],
     'contacts_index' => [[], ['_controller' => 'App\\Controller\\ContactsController::index'], [], [['text', '/contacts']], [], []],
     'contact_details' => [['id'], ['_controller' => 'App\\Controller\\ContactsController::showContact'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/contacts']], [], []],
+    'contact_add' => [[], ['_controller' => 'App\\Controller\\ContactsController::addSkill'], [], [['text', '/contacts-add']], [], []],
     'hideouts_index' => [[], ['_controller' => 'App\\Controller\\HideoutsController::index'], [], [['text', '/hideouts']], [], []],
     'hideout_details' => [['id'], ['_controller' => 'App\\Controller\\HideoutsController::showHideout'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/hideouts']], [], []],
     'app.home' => [[], ['_controller' => 'App\\Controller\\MissionsController::index'], [], [['text', '/']], [], []],
@@ -28,6 +29,7 @@ return [
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'skills_index' => [[], ['_controller' => 'App\\Controller\\SkillsController::index'], [], [['text', '/skills']], [], []],
     'skill_details' => [['id'], ['_controller' => 'App\\Controller\\SkillsController::showSkill'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/skills']], [], []],
+    'skill_add' => [[], ['_controller' => 'App\\Controller\\SkillsController::addSkill'], [], [['text', '/skills-add']], [], []],
     'targets_index' => [[], ['_controller' => 'App\\Controller\\TargetsController::index'], [], [['text', '/targets']], [], []],
     'target_details' => [['id'], ['_controller' => 'App\\Controller\\TargetsController::showAgent'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/targets']], [], []],
 ];

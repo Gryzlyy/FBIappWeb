@@ -301,4 +301,15 @@ class Skills extends \App\Entity\Skills implements \Doctrine\ORM\Proxy\Proxy
         return parent::removeMission($mission);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }

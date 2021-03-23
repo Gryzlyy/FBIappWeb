@@ -190,7 +190,7 @@ class __TwigTemplate_7d88fc321d329ed6ec17e968019fae867026db02058beef8e05f98db1c0
         echo "    <button class=\"btn btn-md btn-success mx-2\">
         <a href=\"";
         // line 54
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("skill_add");
         echo "\" style=\"color: white; text-decoration: none\">
             Add a skill
         </a>
@@ -274,7 +274,7 @@ class __TwigTemplate_7d88fc321d329ed6ec17e968019fae867026db02058beef8e05f98db1c0
 
     {#  {% if is_granted('ROLE_ADMIN') %} #}
     <button class=\"btn btn-md btn-success mx-2\">
-        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
+        <a href=\"{{ path('skill_add') }}\" style=\"color: white; text-decoration: none\">
             Add a skill
         </a>
     </button>

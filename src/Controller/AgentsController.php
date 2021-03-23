@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Agents;
 use App\Form\AddAgentFormType;
+use App\Form\AddAgentsType;
 use App\Repository\AgentsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,7 +37,7 @@ class AgentsController extends AbstractController
     public function addAgent(Request $request): Response
     {
         $agent = new Agents();
-        $form = $this->createForm(AddAgentFormType::class, $agent);
+        $form = $this->createForm(AddAgentsType::class, $agent);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
