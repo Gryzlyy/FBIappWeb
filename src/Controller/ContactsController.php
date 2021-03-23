@@ -53,16 +53,42 @@ class ContactsController extends AbstractController
     }
 
     /**
-     * @Route ("/contacts/{id}", name="contact_delete", methods={"DELETE"})
+     * @Route ("/contacts/{id}/update", name="contact_update", methods={"GET", "POST"})
      */
-    public function deleteContact(Request $request, Contacts $contact): Response
+    public function updateContact(Request $request, Contacts $contact): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $contact->getId(), $request->request->get('_token')))
-        {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($contact);
-            $entityManager->flush();
+        $form = $this->createForm(AddContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('contacts_index');
         }
+
+        return $this->render('contacts/editContact.html.twig', [
+            'contact' => $contact,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route ("/contacts/{id}/delete", name="contact_delete", methods={"GET"})
+     */
+    public function deleteContact(int $id, ContactsRepository $contactsRepository): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $contact = $contactsRepository->find($id);
+        if (!$contact) {
+            return $this->redirectToRoute('contacts_index');
+        }
+
+        $entityManager->remove($contact);
+        $entityManager->flush();
+
         return $this->redirectToRoute('contacts_index');
     }
+
+
 }

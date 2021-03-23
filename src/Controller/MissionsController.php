@@ -53,26 +53,21 @@ class MissionsController extends AbstractController
     }
 
     /**
-     * @Route ("missions/{id}/delete", name="mission_delete")
+     * @Route ("/missions/{id}/update", name="mission_update", methods={"GET", "POST"})
      */
-    public function deleteMission(Request $request, Missions $missions): Response
+    public function updateContact(Request $request, Missions $mission): Response
     {
-        $form = $this->createForm(AddMissionType::class, $missions);
+        $form = $this->createForm(AddMissionType::class, $mission);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if (!$missions->isMissionValid()) {
-                $this->addFlash('error', 'Your mission does not contain valids items. Please check the following: Agent(s) skill(s) / Nationality of agents or contacts / Hideaway country');
-                return $this->redirectToRoute('app.home');
-            };
-
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('app.home');
         }
 
-        return $this->render('missions/edit.html.twig', [
-            'mission' => $missions,
+        return $this->render('missions/editMission.html.twig', [
+            'mission' => $mission,
             'form' => $form->createView(),
         ]);
     }

@@ -52,4 +52,24 @@ class AgentsController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route ("/agents/{id}/update", name="agent_update", methods={"GET", "POST"})
+     */
+    public function updateAgent(Request $request, Agents $agent): Response
+    {
+        $form = $this->createForm(AddAgentsType::class, $agent);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('agents_index');
+        }
+
+        return $this->render('agents/editAgent.html.twig', [
+            'agent' => $agent,
+            'form' => $form->createView(),
+        ]);
+    }
 }

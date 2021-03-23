@@ -43,16 +43,26 @@
         </tr>
         </tbody>
     </table>
-    <button class="btn btn-md btn-primary mx-5">
+    <button class="btn btn-md btn-primary mx-5 mb-5">
         <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
             Sign in
         </a>
     </button>
 
     {#  {% if is_granted('ROLE_ADMIN') %} #}
-    <button class="btn btn-md btn-success mx-2">
+    <button class="btn btn-md btn-success mx-2 mb-5">
         <a href="{{ path('skill_add') }}" style="color: white; text-decoration: none">
             Add a skill
+        </a>
+    </button>
+    <button class="btn btn-md btn-warning mx-1 mb-5">
+        <a href="{{ path('skill_update', {'id': skill.id}) }}" style="color: white; text-decoration: none">
+            Edit "{{ skill.name }}"
+        </a>
+    </button>
+    <button class="btn btn-md btn-danger mx-1 mb-5">
+        <a href="{{ path('skill_update', {'id': skill.id}) }}" style="color: white; text-decoration: none">
+            Delete "{{ skill.name }}"
         </a>
     </button>
     {#  {% endif %}#}

@@ -51,4 +51,24 @@ class HideoutsController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route ("/hideouts/{id}/update", name="hideout_update", methods={"GET", "POST"})
+     */
+    public function updateHideout(Request $request, Hideouts $hideout): Response
+    {
+        $form = $this->createForm(AddHideoutType::class, $hideout);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('hideouts_index');
+        }
+
+        return $this->render('hideouts/editHideout.html.twig', [
+            'hideout' => $hideout,
+            'form' => $form->createView(),
+        ]);
+    }
 }

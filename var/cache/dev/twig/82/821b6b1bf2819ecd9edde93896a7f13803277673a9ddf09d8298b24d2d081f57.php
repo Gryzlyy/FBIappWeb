@@ -176,7 +176,7 @@ class __TwigTemplate_7d88fc321d329ed6ec17e968019fae867026db02058beef8e05f98db1c0
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5\">
+    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
         <a href=\"";
         // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
@@ -187,12 +187,34 @@ class __TwigTemplate_7d88fc321d329ed6ec17e968019fae867026db02058beef8e05f98db1c0
 
     ";
         // line 53
-        echo "    <button class=\"btn btn-md btn-success mx-2\">
+        echo "    <button class=\"btn btn-md btn-success mx-2 mb-5\">
         <a href=\"";
         // line 54
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("skill_add");
         echo "\" style=\"color: white; text-decoration: none\">
             Add a skill
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-warning mx-1 mb-5\">
+        <a href=\"";
+        // line 59
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("skill_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["skill"]) || array_key_exists("skill", $context) ? $context["skill"] : (function () { throw new RuntimeError('Variable "skill" does not exist.', 59, $this->source); })()), "id", [], "any", false, false, false, 59)]), "html", null, true);
+        echo "\" style=\"color: white; text-decoration: none\">
+            Edit \"";
+        // line 60
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["skill"]) || array_key_exists("skill", $context) ? $context["skill"] : (function () { throw new RuntimeError('Variable "skill" does not exist.', 60, $this->source); })()), "name", [], "any", false, false, false, 60), "html", null, true);
+        echo "\"
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-danger mx-1 mb-5\">
+        <a href=\"";
+        // line 64
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("skill_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["skill"]) || array_key_exists("skill", $context) ? $context["skill"] : (function () { throw new RuntimeError('Variable "skill" does not exist.', 64, $this->source); })()), "id", [], "any", false, false, false, 64)]), "html", null, true);
+        echo "\" style=\"color: white; text-decoration: none\">
+            Delete \"";
+        // line 65
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["skill"]) || array_key_exists("skill", $context) ? $context["skill"] : (function () { throw new RuntimeError('Variable "skill" does not exist.', 65, $this->source); })()), "name", [], "any", false, false, false, 65), "html", null, true);
+        echo "\"
         </a>
     </button>
     ";
@@ -216,7 +238,7 @@ class __TwigTemplate_7d88fc321d329ed6ec17e968019fae867026db02058beef8e05f98db1c0
 
     public function getDebugInfo()
     {
-        return array (  193 => 54,  190 => 53,  182 => 47,  175 => 42,  166 => 39,  161 => 38,  157 => 37,  150 => 35,  145 => 32,  136 => 29,  131 => 28,  127 => 27,  122 => 25,  116 => 22,  109 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  216 => 65,  212 => 64,  205 => 60,  201 => 59,  193 => 54,  190 => 53,  182 => 47,  175 => 42,  166 => 39,  161 => 38,  157 => 37,  150 => 35,  145 => 32,  136 => 29,  131 => 28,  127 => 27,  122 => 25,  116 => 22,  109 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -266,16 +288,26 @@ class __TwigTemplate_7d88fc321d329ed6ec17e968019fae867026db02058beef8e05f98db1c0
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5\">
+    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
         <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
             Sign in
         </a>
     </button>
 
     {#  {% if is_granted('ROLE_ADMIN') %} #}
-    <button class=\"btn btn-md btn-success mx-2\">
+    <button class=\"btn btn-md btn-success mx-2 mb-5\">
         <a href=\"{{ path('skill_add') }}\" style=\"color: white; text-decoration: none\">
             Add a skill
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-warning mx-1 mb-5\">
+        <a href=\"{{ path('skill_update', {'id': skill.id}) }}\" style=\"color: white; text-decoration: none\">
+            Edit \"{{ skill.name }}\"
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-danger mx-1 mb-5\">
+        <a href=\"{{ path('skill_update', {'id': skill.id}) }}\" style=\"color: white; text-decoration: none\">
+            Delete \"{{ skill.name }}\"
         </a>
     </button>
     {#  {% endif %}#}

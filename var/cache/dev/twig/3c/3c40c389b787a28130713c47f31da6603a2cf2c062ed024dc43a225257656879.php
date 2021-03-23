@@ -184,7 +184,7 @@ class __TwigTemplate_de8b9bc42cb53fda64761cdcbf81d437b97d76cf8361dde4d880fcb27c4
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5\">
+    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
         <a href=\"";
         // line 53
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
@@ -195,12 +195,34 @@ class __TwigTemplate_de8b9bc42cb53fda64761cdcbf81d437b97d76cf8361dde4d880fcb27c4
 
     ";
         // line 59
-        echo "    <button class=\"btn btn-md btn-success mx-2\">
+        echo "    <button class=\"btn btn-md btn-success mr-5 mb-5\">
         <a href=\"";
         // line 60
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("agent_add");
         echo "\" style=\"color: white; text-decoration: none\">
             Add an agent
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-warning mx-1 mb-5\">
+        <a href=\"";
+        // line 65
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("agent_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["agent"]) || array_key_exists("agent", $context) ? $context["agent"] : (function () { throw new RuntimeError('Variable "agent" does not exist.', 65, $this->source); })()), "id", [], "any", false, false, false, 65)]), "html", null, true);
+        echo "\" style=\"color: white; text-decoration: none\">
+            Edit \"";
+        // line 66
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["agent"]) || array_key_exists("agent", $context) ? $context["agent"] : (function () { throw new RuntimeError('Variable "agent" does not exist.', 66, $this->source); })()), "codeName", [], "any", false, false, false, 66), "html", null, true);
+        echo "\"
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-danger mx-1 mb-5\">
+        <a href=\"";
+        // line 70
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("agent_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["agent"]) || array_key_exists("agent", $context) ? $context["agent"] : (function () { throw new RuntimeError('Variable "agent" does not exist.', 70, $this->source); })()), "id", [], "any", false, false, false, 70)]), "html", null, true);
+        echo "\" style=\"color: white; text-decoration: none\">
+            Delete \"";
+        // line 71
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["agent"]) || array_key_exists("agent", $context) ? $context["agent"] : (function () { throw new RuntimeError('Variable "agent" does not exist.', 71, $this->source); })()), "codeName", [], "any", false, false, false, 71), "html", null, true);
+        echo "\"
         </a>
     </button>
     ";
@@ -224,7 +246,7 @@ class __TwigTemplate_de8b9bc42cb53fda64761cdcbf81d437b97d76cf8361dde4d880fcb27c4
 
     public function getDebugInfo()
     {
-        return array (  201 => 60,  198 => 59,  190 => 53,  183 => 48,  174 => 45,  169 => 44,  165 => 43,  160 => 41,  155 => 38,  146 => 36,  142 => 35,  134 => 30,  127 => 26,  120 => 22,  113 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  224 => 71,  220 => 70,  213 => 66,  209 => 65,  201 => 60,  198 => 59,  190 => 53,  183 => 48,  174 => 45,  169 => 44,  165 => 43,  160 => 41,  155 => 38,  146 => 36,  142 => 35,  134 => 30,  127 => 26,  120 => 22,  113 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -280,16 +302,26 @@ class __TwigTemplate_de8b9bc42cb53fda64761cdcbf81d437b97d76cf8361dde4d880fcb27c4
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5\">
+    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
         <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
             Sign in
         </a>
     </button>
 
     {#  {% if is_granted('ROLE_ADMIN') %} #}
-    <button class=\"btn btn-md btn-success mx-2\">
+    <button class=\"btn btn-md btn-success mr-5 mb-5\">
         <a href=\"{{ path('agent_add') }}\" style=\"color: white; text-decoration: none\">
             Add an agent
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-warning mx-1 mb-5\">
+        <a href=\"{{ path('agent_update', {'id': agent.id}) }}\" style=\"color: white; text-decoration: none\">
+            Edit \"{{ agent.codeName }}\"
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-danger mx-1 mb-5\">
+        <a href=\"{{ path('agent_update', {'id': agent.id}) }}\" style=\"color: white; text-decoration: none\">
+            Delete \"{{ agent.codeName }}\"
         </a>
     </button>
     {#  {% endif %}#}

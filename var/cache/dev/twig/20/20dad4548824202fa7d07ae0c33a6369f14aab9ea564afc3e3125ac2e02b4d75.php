@@ -171,7 +171,7 @@ class __TwigTemplate_653d15586bd123fdaf89e874b36e8b4b08814eca6bf1c4398b4bb6c0021
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5\">
+    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
         <a href=\"";
         // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
@@ -182,12 +182,34 @@ class __TwigTemplate_653d15586bd123fdaf89e874b36e8b4b08814eca6bf1c4398b4bb6c0021
 
     ";
         // line 55
-        echo "    <button class=\"btn btn-md btn-success mx-2\">
+        echo "    <button class=\"btn btn-md btn-success mx-2 mb-5\">
         <a href=\"";
         // line 56
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_add");
         echo "\" style=\"color: white; text-decoration: none\">
             Add a contact
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-warning mx-1 mb-5\">
+        <a href=\"";
+        // line 61
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 61, $this->source); })()), "id", [], "any", false, false, false, 61)]), "html", null, true);
+        echo "\" style=\"color: white; text-decoration: none\">
+            Edit \"";
+        // line 62
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 62, $this->source); })()), "codeName", [], "any", false, false, false, 62), "html", null, true);
+        echo "\"
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-danger mx-1 mb-5\">
+        <a href=\"";
+        // line 66
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 66, $this->source); })()), "id", [], "any", false, false, false, 66)]), "html", null, true);
+        echo "\" style=\"color: white; text-decoration: none\">
+            Delete \"";
+        // line 67
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 67, $this->source); })()), "codeName", [], "any", false, false, false, 67), "html", null, true);
+        echo "\"
         </a>
     </button>
     ";
@@ -211,7 +233,7 @@ class __TwigTemplate_653d15586bd123fdaf89e874b36e8b4b08814eca6bf1c4398b4bb6c0021
 
     public function getDebugInfo()
     {
-        return array (  188 => 56,  185 => 55,  177 => 49,  170 => 44,  161 => 41,  156 => 40,  152 => 39,  147 => 37,  141 => 34,  134 => 30,  127 => 26,  120 => 22,  113 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  211 => 67,  207 => 66,  200 => 62,  196 => 61,  188 => 56,  185 => 55,  177 => 49,  170 => 44,  161 => 41,  156 => 40,  152 => 39,  147 => 37,  141 => 34,  134 => 30,  127 => 26,  120 => 22,  113 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -263,16 +285,26 @@ class __TwigTemplate_653d15586bd123fdaf89e874b36e8b4b08814eca6bf1c4398b4bb6c0021
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5\">
+    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
         <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
             Sign in
         </a>
     </button>
 
     {#  {% if is_granted('ROLE_ADMIN') %} #}
-    <button class=\"btn btn-md btn-success mx-2\">
+    <button class=\"btn btn-md btn-success mx-2 mb-5\">
         <a href=\"{{ path('contact_add') }}\" style=\"color: white; text-decoration: none\">
             Add a contact
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-warning mx-1 mb-5\">
+        <a href=\"{{ path('contact_update', {'id': contact.id}) }}\" style=\"color: white; text-decoration: none\">
+            Edit \"{{ contact.codeName }}\"
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-danger mx-1 mb-5\">
+        <a href=\"{{ path('contact_delete', {'id': contact.id}) }}\" style=\"color: white; text-decoration: none\">
+            Delete \"{{ contact.codeName }}\"
         </a>
     </button>
     {#  {% endif %}#}

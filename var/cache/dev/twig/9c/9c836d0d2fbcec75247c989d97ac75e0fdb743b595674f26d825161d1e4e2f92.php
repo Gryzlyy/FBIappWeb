@@ -164,7 +164,7 @@ class __TwigTemplate_3b822ef1cc0bc1e1fbbb79cab192c7432b6028108b902c0d8479a115f52
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5\">
+    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
         <a href=\"";
         // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
@@ -175,12 +175,34 @@ class __TwigTemplate_3b822ef1cc0bc1e1fbbb79cab192c7432b6028108b902c0d8479a115f52
 
     ";
         // line 51
-        echo "    <button class=\"btn btn-md btn-success mx-2\">
+        echo "    <button class=\"btn btn-md btn-success mx-2 mb-5\">
         <a href=\"";
         // line 52
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("target_add");
         echo "\" style=\"color: white; text-decoration: none\">
             Add a target
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-warning mx-1 mb-5\">
+        <a href=\"";
+        // line 57
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("target_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["target"]) || array_key_exists("target", $context) ? $context["target"] : (function () { throw new RuntimeError('Variable "target" does not exist.', 57, $this->source); })()), "id", [], "any", false, false, false, 57)]), "html", null, true);
+        echo "\" style=\"color: white; text-decoration: none\">
+            Edit \"";
+        // line 58
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["target"]) || array_key_exists("target", $context) ? $context["target"] : (function () { throw new RuntimeError('Variable "target" does not exist.', 58, $this->source); })()), "codeName", [], "any", false, false, false, 58), "html", null, true);
+        echo "\"
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-danger mx-1 mb-5\">
+        <a href=\"";
+        // line 62
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("target_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["target"]) || array_key_exists("target", $context) ? $context["target"] : (function () { throw new RuntimeError('Variable "target" does not exist.', 62, $this->source); })()), "id", [], "any", false, false, false, 62)]), "html", null, true);
+        echo "\" style=\"color: white; text-decoration: none\">
+            Delete \"";
+        // line 63
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["target"]) || array_key_exists("target", $context) ? $context["target"] : (function () { throw new RuntimeError('Variable "target" does not exist.', 63, $this->source); })()), "codeName", [], "any", false, false, false, 63), "html", null, true);
+        echo "\"
         </a>
     </button>
     ";
@@ -204,7 +226,7 @@ class __TwigTemplate_3b822ef1cc0bc1e1fbbb79cab192c7432b6028108b902c0d8479a115f52
 
     public function getDebugInfo()
     {
-        return array (  181 => 52,  178 => 51,  170 => 45,  163 => 40,  154 => 37,  149 => 36,  145 => 35,  140 => 33,  134 => 30,  127 => 26,  120 => 22,  113 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  204 => 63,  200 => 62,  193 => 58,  189 => 57,  181 => 52,  178 => 51,  170 => 45,  163 => 40,  154 => 37,  149 => 36,  145 => 35,  140 => 33,  134 => 30,  127 => 26,  120 => 22,  113 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -252,16 +274,26 @@ class __TwigTemplate_3b822ef1cc0bc1e1fbbb79cab192c7432b6028108b902c0d8479a115f52
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5\">
+    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
         <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
             Sign in
         </a>
     </button>
 
     {#  {% if is_granted('ROLE_ADMIN') %} #}
-    <button class=\"btn btn-md btn-success mx-2\">
+    <button class=\"btn btn-md btn-success mx-2 mb-5\">
         <a href=\"{{ path('target_add') }}\" style=\"color: white; text-decoration: none\">
             Add a target
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-warning mx-1 mb-5\">
+        <a href=\"{{ path('target_update', {'id': target.id}) }}\" style=\"color: white; text-decoration: none\">
+            Edit \"{{ target.codeName }}\"
+        </a>
+    </button>
+    <button class=\"btn btn-md btn-danger mx-1 mb-5\">
+        <a href=\"{{ path('target_update', {'id': target.id}) }}\" style=\"color: white; text-decoration: none\">
+            Delete \"{{ target.codeName }}\"
         </a>
     </button>
     {#  {% endif %}#}

@@ -51,4 +51,24 @@ class TargetsController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route ("/targets/{id}/update", name="target_update", methods={"GET", "POST"})
+     */
+    public function updateContact(Request $request, Targets $target): Response
+    {
+        $form = $this->createForm(AddTargetType::class, $target);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('targets_index');
+        }
+
+        return $this->render('targets/editTarget.html.twig', [
+            'target' => $target,
+            'form' => $form->createView(),
+        ]);
+    }
 }

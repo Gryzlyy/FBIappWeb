@@ -51,4 +51,24 @@ class SkillsController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route ("/skills/{id}/update", name="skill_update", methods={"GET", "POST"})
+     */
+    public function updateContact(Request $request, Skills $skill): Response
+    {
+        $form = $this->createForm(AddSkillType::class, $skill);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('skills_index');
+        }
+
+        return $this->render('skills/editSkill.html.twig', [
+            'skill' => $skill,
+            'form' => $form->createView(),
+        ]);
+    }
 }
