@@ -26,6 +26,7 @@ class ComposerStaticInit97adaede85d162e9fa09a3ae52c78774
         ),
         'S' => 
         array (
+            'Symfony\\Requirements\\' => 21,
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -126,6 +127,10 @@ class ComposerStaticInit97adaede85d162e9fa09a3ae52c78774
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\Requirements\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/requirements-checker/src',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -4299,6 +4304,11 @@ class ComposerStaticInit97adaede85d162e9fa09a3ae52c78774
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
         'Symfony\\Polyfill\\Php73\\Php73' => __DIR__ . '/..' . '/symfony/polyfill-php73/Php73.php',
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
+        'Symfony\\Requirements\\PhpConfigRequirement' => __DIR__ . '/..' . '/symfony/requirements-checker/src/PhpConfigRequirement.php',
+        'Symfony\\Requirements\\ProjectRequirements' => __DIR__ . '/..' . '/symfony/requirements-checker/src/ProjectRequirements.php',
+        'Symfony\\Requirements\\Requirement' => __DIR__ . '/..' . '/symfony/requirements-checker/src/Requirement.php',
+        'Symfony\\Requirements\\RequirementCollection' => __DIR__ . '/..' . '/symfony/requirements-checker/src/RequirementCollection.php',
+        'Symfony\\Requirements\\SymfonyRequirements' => __DIR__ . '/..' . '/symfony/requirements-checker/src/SymfonyRequirements.php',
         'Twig\\Cache\\CacheInterface' => __DIR__ . '/..' . '/twig/twig/src/Cache/CacheInterface.php',
         'Twig\\Cache\\FilesystemCache' => __DIR__ . '/..' . '/twig/twig/src/Cache/FilesystemCache.php',
         'Twig\\Cache\\NullCache' => __DIR__ . '/..' . '/twig/twig/src/Cache/NullCache.php',

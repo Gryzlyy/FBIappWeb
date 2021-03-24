@@ -187,22 +187,18 @@ class __TwigTemplate_098e48053ff375fec3f52611acc3ebdbcf9bdfa81b396d5658b9f37d02a
         </tbody>
     </table>
 
-    <button class=\"btn btn-md btn-primary mx-4\">
-        <a href=\"";
-        // line 63
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
-
     ";
-        // line 68
+        // line 62
+        $this->loadTemplate("_signInBtn.html.twig", "contacts/index.html.twig", 62)->display($context);
+        // line 63
+        echo "
+    ";
+        // line 64
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 69
-            echo "    <button class=\"btn btn-md btn-success mx-2\">
+            // line 65
+            echo "    <button class=\"btn btn-md btn-success mx-5 mb-5\">
         <a href=\"";
-            // line 70
+            // line 66
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_add");
             echo "\" style=\"color: white; text-decoration: none\">
             Add a contact
@@ -210,7 +206,7 @@ class __TwigTemplate_098e48053ff375fec3f52611acc3ebdbcf9bdfa81b396d5658b9f37d02a
     </button>
     ";
         }
-        // line 75
+        // line 71
         echo "
 ";
         
@@ -233,7 +229,7 @@ class __TwigTemplate_098e48053ff375fec3f52611acc3ebdbcf9bdfa81b396d5658b9f37d02a
 
     public function getDebugInfo()
     {
-        return array (  214 => 75,  206 => 70,  203 => 69,  201 => 68,  193 => 63,  186 => 58,  176 => 53,  166 => 46,  156 => 40,  154 => 39,  150 => 38,  145 => 35,  136 => 33,  132 => 32,  127 => 30,  123 => 29,  119 => 28,  114 => 25,  110 => 24,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  210 => 71,  202 => 66,  199 => 65,  197 => 64,  194 => 63,  192 => 62,  186 => 58,  176 => 53,  166 => 46,  156 => 40,  154 => 39,  150 => 38,  145 => 35,  136 => 33,  132 => 32,  127 => 30,  123 => 29,  119 => 28,  114 => 25,  110 => 24,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -299,14 +295,10 @@ class __TwigTemplate_098e48053ff375fec3f52611acc3ebdbcf9bdfa81b396d5658b9f37d02a
         </tbody>
     </table>
 
-    <button class=\"btn btn-md btn-primary mx-4\">
-        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
+    {% include '_signInBtn.html.twig' %}
 
     {% if is_granted('ROLE_ADMIN') %}
-    <button class=\"btn btn-md btn-success mx-2\">
+    <button class=\"btn btn-md btn-success mx-5 mb-5\">
         <a href=\"{{ path('contact_add') }}\" style=\"color: white; text-decoration: none\">
             Add a contact
         </a>

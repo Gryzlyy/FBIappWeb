@@ -217,23 +217,18 @@ $context["mission"], "status", [], "any", false, false, false, 41) == "In prepar
         echo "
         </tbody>
     </table>
-
-    <button class=\"btn btn-md btn-primary mx-4\">
-        <a href=\"";
-        // line 77
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
-
+    ";
+        // line 75
+        $this->loadTemplate("_signInBtn.html.twig", "missions/index.html.twig", 75)->display($context);
+        // line 76
+        echo "
   ";
-        // line 82
+        // line 77
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 83
-            echo "        <button class=\"btn btn-md btn-success mx-2\">
+            // line 78
+            echo "        <button class=\"btn btn-md btn-success mx-5 mb-5\">
             <a href=\"";
-            // line 84
+            // line 79
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission_add");
             echo "\" style=\"color: white; text-decoration: none\">
                 Add a mission
@@ -241,17 +236,17 @@ $context["mission"], "status", [], "any", false, false, false, 41) == "In prepar
         </button>
   ";
         }
-        // line 89
+        // line 84
         echo "
     ";
-        // line 90
+        // line 85
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 90, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 90));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 85, $this->source); })()), "flashes", [0 => "error"], "method", false, false, false, 85));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 91
+            // line 86
             echo "        <div class=\"flash-notice\">
             ";
-            // line 92
+            // line 87
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
         </div>
@@ -260,7 +255,7 @@ $context["mission"], "status", [], "any", false, false, false, 41) == "In prepar
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 95
+        // line 90
         echo "
 ";
         
@@ -283,7 +278,7 @@ $context["mission"], "status", [], "any", false, false, false, 41) == "In prepar
 
     public function getDebugInfo()
     {
-        return array (  264 => 95,  255 => 92,  252 => 91,  248 => 90,  245 => 89,  237 => 84,  234 => 83,  232 => 82,  224 => 77,  217 => 72,  207 => 67,  197 => 60,  187 => 54,  185 => 53,  181 => 52,  176 => 50,  172 => 49,  168 => 48,  164 => 47,  160 => 46,  156 => 45,  151 => 44,  147 => 42,  145 => 41,  142 => 40,  140 => 39,  137 => 38,  135 => 37,  132 => 36,  130 => 35,  125 => 33,  120 => 30,  116 => 29,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  259 => 90,  250 => 87,  247 => 86,  243 => 85,  240 => 84,  232 => 79,  229 => 78,  227 => 77,  224 => 76,  222 => 75,  217 => 72,  207 => 67,  197 => 60,  187 => 54,  185 => 53,  181 => 52,  176 => 50,  172 => 49,  168 => 48,  164 => 47,  160 => 46,  156 => 45,  151 => 44,  147 => 42,  145 => 41,  142 => 40,  140 => 39,  137 => 38,  135 => 37,  132 => 36,  130 => 35,  125 => 33,  120 => 30,  116 => 29,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -362,15 +357,10 @@ $context["mission"], "status", [], "any", false, false, false, 41) == "In prepar
 
         </tbody>
     </table>
-
-    <button class=\"btn btn-md btn-primary mx-4\">
-        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
+    {% include '_signInBtn.html.twig' %}
 
   {% if is_granted('ROLE_ADMIN') %}
-        <button class=\"btn btn-md btn-success mx-2\">
+        <button class=\"btn btn-md btn-success mx-5 mb-5\">
             <a href=\"{{ path('mission_add') }}\" style=\"color: white; text-decoration: none\">
                 Add a mission
             </a>

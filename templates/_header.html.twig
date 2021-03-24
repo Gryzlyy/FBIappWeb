@@ -24,6 +24,11 @@
                     <a class="nav-link" href="{{ path('skills_index') }}"> Skills </a>
                 </li>
             </ul>
+            {% if is_granted('ROLE_ADMIN') %}
+                <span class="nav-item my-2 mx-5">
+                    <button class="btn btn-secondary btn-sm"><a href="{{ path('app_logout') }}" style="color: white; text-decoration: none">Log out</a></button>
+                </span>
+            {% endif %}
         </div>
     </nav>
     <p class="mx-1 my-2" style="font-size: 0.8em; color: limegreen">

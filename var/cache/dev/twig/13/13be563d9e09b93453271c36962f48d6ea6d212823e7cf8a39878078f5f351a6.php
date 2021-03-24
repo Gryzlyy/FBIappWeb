@@ -106,17 +106,30 @@ class __TwigTemplate_53fac5ca733b91c52b79fcdefe6d441d1669585473337aa1fa51bf428a1
         echo "\"> Skills </a>
                 </li>
             </ul>
-        </div>
+            ";
+        // line 27
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 28
+            echo "                <span class=\"nav-item my-2 mx-5\">
+                    <button class=\"btn btn-secondary btn-sm\"><a href=\"";
+            // line 29
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\" style=\"color: white; text-decoration: none\">Log out</a></button>
+                </span>
+            ";
+        }
+        // line 32
+        echo "        </div>
     </nav>
     <p class=\"mx-1 my-2\" style=\"font-size: 0.8em; color: limegreen\">
         ";
-        // line 30
+        // line 35
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 31
+            // line 36
             echo "             Connected as an administrator
         ";
         }
-        // line 33
+        // line 38
         echo "    </p>
 ";
         
@@ -139,7 +152,7 @@ class __TwigTemplate_53fac5ca733b91c52b79fcdefe6d441d1669585473337aa1fa51bf428a1
 
     public function getDebugInfo()
     {
-        return array (  120 => 33,  116 => 31,  114 => 30,  105 => 24,  99 => 21,  93 => 18,  87 => 15,  81 => 12,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  133 => 38,  129 => 36,  127 => 35,  122 => 32,  116 => 29,  113 => 28,  111 => 27,  105 => 24,  99 => 21,  93 => 18,  87 => 15,  81 => 12,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -170,6 +183,11 @@ class __TwigTemplate_53fac5ca733b91c52b79fcdefe6d441d1669585473337aa1fa51bf428a1
                     <a class=\"nav-link\" href=\"{{ path('skills_index') }}\"> Skills </a>
                 </li>
             </ul>
+            {% if is_granted('ROLE_ADMIN') %}
+                <span class=\"nav-item my-2 mx-5\">
+                    <button class=\"btn btn-secondary btn-sm\"><a href=\"{{ path('app_logout') }}\" style=\"color: white; text-decoration: none\">Log out</a></button>
+                </span>
+            {% endif %}
         </div>
     </nav>
     <p class=\"mx-1 my-2\" style=\"font-size: 0.8em; color: limegreen\">

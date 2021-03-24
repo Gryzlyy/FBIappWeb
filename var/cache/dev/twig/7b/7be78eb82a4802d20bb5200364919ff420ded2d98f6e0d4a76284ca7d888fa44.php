@@ -205,22 +205,18 @@ class __TwigTemplate_f7d8a3aa102781aade8c5afb6e46dde7ca1951fb378d5e65c983cdd9c01
         echo "        </tbody>
     </table>
 
-    <button class=\"btn btn-md btn-primary mx-4\">
-        <a href=\"";
-        // line 68
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
-
     ";
-        // line 73
+        // line 67
+        $this->loadTemplate("_signInBtn.html.twig", "agents/index.html.twig", 67)->display($context);
+        // line 68
+        echo "
+    ";
+        // line 69
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 74
-            echo "    <button class=\"btn btn-md btn-success mx-2\">
+            // line 70
+            echo "    <button class=\"btn btn-md btn-success mx-5 mb-5\">
         <a href=\"";
-            // line 75
+            // line 71
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("agent_add");
             echo "\" style=\"color: white; text-decoration: none\">
             Add an agent
@@ -228,7 +224,7 @@ class __TwigTemplate_f7d8a3aa102781aade8c5afb6e46dde7ca1951fb378d5e65c983cdd9c01
     </button>
     ";
         }
-        // line 80
+        // line 76
         echo "
 ";
         
@@ -251,7 +247,7 @@ class __TwigTemplate_f7d8a3aa102781aade8c5afb6e46dde7ca1951fb378d5e65c983cdd9c01
 
     public function getDebugInfo()
     {
-        return array (  232 => 80,  224 => 75,  221 => 74,  219 => 73,  211 => 68,  205 => 64,  196 => 60,  186 => 53,  176 => 47,  174 => 46,  170 => 45,  165 => 42,  156 => 40,  152 => 39,  148 => 37,  139 => 35,  135 => 34,  130 => 32,  126 => 31,  122 => 30,  117 => 27,  113 => 26,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  228 => 76,  220 => 71,  217 => 70,  215 => 69,  212 => 68,  210 => 67,  205 => 64,  196 => 60,  186 => 53,  176 => 47,  174 => 46,  170 => 45,  165 => 42,  156 => 40,  152 => 39,  148 => 37,  139 => 35,  135 => 34,  130 => 32,  126 => 31,  122 => 30,  117 => 27,  113 => 26,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -322,14 +318,10 @@ class __TwigTemplate_f7d8a3aa102781aade8c5afb6e46dde7ca1951fb378d5e65c983cdd9c01
         </tbody>
     </table>
 
-    <button class=\"btn btn-md btn-primary mx-4\">
-        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
+    {% include '_signInBtn.html.twig' %}
 
     {% if is_granted('ROLE_ADMIN') %}
-    <button class=\"btn btn-md btn-success mx-2\">
+    <button class=\"btn btn-md btn-success mx-5 mb-5\">
         <a href=\"{{ path('agent_add') }}\" style=\"color: white; text-decoration: none\">
             Add an agent
         </a>

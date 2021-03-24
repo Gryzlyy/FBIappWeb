@@ -168,22 +168,18 @@ class __TwigTemplate_a3758d9c50ac130dfcaf52c53751e7b0a990cae7b342ec15e2a4cbc5e68
         echo "        </tbody>
     </table>
 
-    <button class=\"btn btn-md btn-primary mx-4\">
-        <a href=\"";
-        // line 55
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
-
     ";
-        // line 60
+        // line 54
+        $this->loadTemplate("_signInBtn.html.twig", "skills/index.html.twig", 54)->display($context);
+        // line 55
+        echo "
+    ";
+        // line 56
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 61
-            echo "        <button class=\"btn btn-md btn-success mx-2\">
+            // line 57
+            echo "        <button class=\"btn btn-md btn-success mx-5 mb-5\">
             <a href=\"";
-            // line 62
+            // line 58
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("skill_add");
             echo "\" style=\"color: white; text-decoration: none\">
                 Add a skill
@@ -191,7 +187,7 @@ class __TwigTemplate_a3758d9c50ac130dfcaf52c53751e7b0a990cae7b342ec15e2a4cbc5e68
         </button>
         ";
         }
-        // line 67
+        // line 63
         echo "
 ";
         
@@ -214,7 +210,7 @@ class __TwigTemplate_a3758d9c50ac130dfcaf52c53751e7b0a990cae7b342ec15e2a4cbc5e68
 
     public function getDebugInfo()
     {
-        return array (  195 => 67,  187 => 62,  184 => 61,  182 => 60,  174 => 55,  168 => 51,  159 => 47,  149 => 40,  139 => 34,  137 => 33,  133 => 32,  128 => 30,  124 => 29,  120 => 28,  115 => 25,  111 => 24,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  191 => 63,  183 => 58,  180 => 57,  178 => 56,  175 => 55,  173 => 54,  168 => 51,  159 => 47,  149 => 40,  139 => 34,  137 => 33,  133 => 32,  128 => 30,  124 => 29,  120 => 28,  115 => 25,  111 => 24,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -272,14 +268,10 @@ class __TwigTemplate_a3758d9c50ac130dfcaf52c53751e7b0a990cae7b342ec15e2a4cbc5e68
         </tbody>
     </table>
 
-    <button class=\"btn btn-md btn-primary mx-4\">
-        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
+    {% include '_signInBtn.html.twig' %}
 
     {% if is_granted('ROLE_ADMIN') %}
-        <button class=\"btn btn-md btn-success mx-2\">
+        <button class=\"btn btn-md btn-success mx-5 mb-5\">
             <a href=\"{{ path('skill_add') }}\" style=\"color: white; text-decoration: none\">
                 Add a skill
             </a>

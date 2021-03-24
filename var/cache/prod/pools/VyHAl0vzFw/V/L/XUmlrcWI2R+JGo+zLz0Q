@@ -1,0 +1,336 @@
+<?php //%255BApp%255CEntity%255CMissions%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Missions',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Missions',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\MissionsRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'title' => [
+                        'fieldName' => 'title',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'title',
+                    ],
+                    'description' => [
+                        'fieldName' => 'description',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'description',
+                    ],
+                    'country' => [
+                        'fieldName' => 'country',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'country',
+                    ],
+                    'type' => [
+                        'fieldName' => 'type',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'type',
+                    ],
+                    'status' => [
+                        'fieldName' => 'status',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'status',
+                    ],
+                    'startDate' => [
+                        'fieldName' => 'startDate',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'start_date',
+                    ],
+                    'endDate' => [
+                        'fieldName' => 'endDate',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'end_date',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'title' => 'title',
+                    'description' => 'description',
+                    'country' => 'country',
+                    'type' => 'type',
+                    'status' => 'status',
+                    'start_date' => 'startDate',
+                    'end_date' => 'endDate',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'title' => 'title',
+                    'description' => 'description',
+                    'country' => 'country',
+                    'type' => 'type',
+                    'status' => 'status',
+                    'startDate' => 'start_date',
+                    'endDate' => 'end_date',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'missions',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'agents' => [
+                        'fieldName' => 'agents',
+                        'joinTable' => [
+                            'name' => 'missions_agents',
+                            'joinColumns' => [
+                                [
+                                    'name' => 'missions_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                            'inverseJoinColumns' => [
+                                [
+                                    'name' => 'agents_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                        ],
+                        'targetEntity' => 'App\\Entity\\Agents',
+                        'mappedBy' => null,
+                        'inversedBy' => 'missions',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 8,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Missions',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'joinTableColumns' => [
+                            'missions_id',
+                            'agents_id',
+                        ],
+                        'isOnDeleteCascade' => true,
+                        'relationToSourceKeyColumns' => [
+                            'missions_id' => 'id',
+                        ],
+                        'relationToTargetKeyColumns' => [
+                            'agents_id' => 'id',
+                        ],
+                    ],
+                    'skills' => [
+                        'fieldName' => 'skills',
+                        'joinColumns' => [
+                            [
+                                'name' => 'skills_id',
+                                'unique' => false,
+                                'nullable' => false,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'cascade' => [
+                            'persist',
+                        ],
+                        'inversedBy' => 'missions',
+                        'targetEntity' => 'App\\Entity\\Skills',
+                        'fetch' => 2,
+                        'type' => 2,
+                        'mappedBy' => null,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Missions',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => true,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'skills_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'skills_id' => 'skills_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'skills_id',
+                        ],
+                        'orphanRemoval' => false,
+                    ],
+                    'targets' => [
+                        'fieldName' => 'targets',
+                        'joinTable' => [
+                            'name' => 'missions_targets',
+                            'joinColumns' => [
+                                [
+                                    'name' => 'missions_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                            'inverseJoinColumns' => [
+                                [
+                                    'name' => 'targets_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                        ],
+                        'targetEntity' => 'App\\Entity\\Targets',
+                        'mappedBy' => null,
+                        'inversedBy' => 'missions',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 8,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Missions',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'joinTableColumns' => [
+                            'missions_id',
+                            'targets_id',
+                        ],
+                        'isOnDeleteCascade' => true,
+                        'relationToSourceKeyColumns' => [
+                            'missions_id' => 'id',
+                        ],
+                        'relationToTargetKeyColumns' => [
+                            'targets_id' => 'id',
+                        ],
+                    ],
+                    'contacts' => [
+                        'fieldName' => 'contacts',
+                        'joinTable' => [],
+                        'targetEntity' => 'App\\Entity\\Contacts',
+                        'mappedBy' => 'missions',
+                        'inversedBy' => null,
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 8,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Missions',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                    'hideouts' => [
+                        'fieldName' => 'hideouts',
+                        'joinColumns' => [
+                            [
+                                'name' => 'hideouts_id',
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'cascade' => [
+                            'persist',
+                        ],
+                        'inversedBy' => 'missions',
+                        'targetEntity' => 'App\\Entity\\Hideouts',
+                        'fetch' => 2,
+                        'type' => 2,
+                        'mappedBy' => null,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Missions',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => true,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'hideouts_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'hideouts_id' => 'hideouts_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'hideouts_id',
+                        ],
+                        'orphanRemoval' => false,
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

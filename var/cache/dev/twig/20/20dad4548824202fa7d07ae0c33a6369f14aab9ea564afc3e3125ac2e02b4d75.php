@@ -171,22 +171,19 @@ class __TwigTemplate_653d15586bd123fdaf89e874b36e8b4b08814eca6bf1c4398b4bb6c0021
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
-        <a href=\"";
-        // line 49
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
 
     ";
-        // line 54
+        // line 49
+        $this->loadTemplate("_signInBtn.html.twig", "contacts/showContact.html.twig", 49)->display($context);
+        // line 50
+        echo "
+    ";
+        // line 51
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 55
-            echo "    <button class=\"btn btn-md btn-success mx-2 mb-5\">
+            // line 52
+            echo "    <button class=\"btn btn-md btn-success ms-5 mb-5\">
         <a href=\"";
-            // line 56
+            // line 53
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_add");
             echo "\" style=\"color: white; text-decoration: none\">
             Add a contact
@@ -194,23 +191,23 @@ class __TwigTemplate_653d15586bd123fdaf89e874b36e8b4b08814eca6bf1c4398b4bb6c0021
     </button>
     <button class=\"btn btn-md btn-warning mx-1 mb-5\">
         <a href=\"";
-            // line 61
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 61, $this->source); })()), "id", [], "any", false, false, false, 61)]), "html", null, true);
+            // line 58
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_update", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 58, $this->source); })()), "id", [], "any", false, false, false, 58)]), "html", null, true);
             echo "\" style=\"color: white; text-decoration: none\">
             Edit \"";
-            // line 62
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 62, $this->source); })()), "codeName", [], "any", false, false, false, 62), "html", null, true);
+            // line 59
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 59, $this->source); })()), "codeName", [], "any", false, false, false, 59), "html", null, true);
             echo "\"
         </a>
     </button>
     <button class=\"btn btn-md btn-danger mx-1 mb-5\">
         <a href=\"";
-            // line 66
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 66, $this->source); })()), "id", [], "any", false, false, false, 66)]), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 63, $this->source); })()), "id", [], "any", false, false, false, 63)]), "html", null, true);
             echo "\" style=\"color: white; text-decoration: none\">
             Delete \"";
-            // line 67
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 67, $this->source); })()), "codeName", [], "any", false, false, false, 67), "html", null, true);
+            // line 64
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["contact"]) || array_key_exists("contact", $context) ? $context["contact"] : (function () { throw new RuntimeError('Variable "contact" does not exist.', 64, $this->source); })()), "codeName", [], "any", false, false, false, 64), "html", null, true);
             echo "\"
         </a>
     </button>
@@ -236,7 +233,7 @@ class __TwigTemplate_653d15586bd123fdaf89e874b36e8b4b08814eca6bf1c4398b4bb6c0021
 
     public function getDebugInfo()
     {
-        return array (  213 => 67,  209 => 66,  202 => 62,  198 => 61,  190 => 56,  187 => 55,  185 => 54,  177 => 49,  170 => 44,  161 => 41,  156 => 40,  152 => 39,  147 => 37,  141 => 34,  134 => 30,  127 => 26,  120 => 22,  113 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  210 => 64,  206 => 63,  199 => 59,  195 => 58,  187 => 53,  184 => 52,  182 => 51,  179 => 50,  177 => 49,  170 => 44,  161 => 41,  156 => 40,  152 => 39,  147 => 37,  141 => 34,  134 => 30,  127 => 26,  120 => 22,  113 => 18,  100 => 12,  97 => 11,  95 => 10,  92 => 9,  82 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -288,14 +285,11 @@ class __TwigTemplate_653d15586bd123fdaf89e874b36e8b4b08814eca6bf1c4398b4bb6c0021
         </tr>
         </tbody>
     </table>
-    <button class=\"btn btn-md btn-primary mx-5 mb-5\">
-        <a href=\"{{ path('app_login') }}\" style=\"color: white; text-decoration: none\">
-            Sign in
-        </a>
-    </button>
+
+    {% include '_signInBtn.html.twig' %}
 
     {% if is_granted('ROLE_ADMIN') %}
-    <button class=\"btn btn-md btn-success mx-2 mb-5\">
+    <button class=\"btn btn-md btn-success ms-5 mb-5\">
         <a href=\"{{ path('contact_add') }}\" style=\"color: white; text-decoration: none\">
             Add a contact
         </a>

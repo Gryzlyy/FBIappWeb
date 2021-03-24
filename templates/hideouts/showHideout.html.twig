@@ -37,14 +37,11 @@
         </tr>
         </tbody>
     </table>
-    <button class="btn btn-md btn-primary mx-5 mb-5">
-        <a href="{{ path('app_login') }}" style="color: white; text-decoration: none">
-            Sign in
-        </a>
-    </button>
+
+    {% include '_signInBtn.html.twig' %}
 
     {% if is_granted('ROLE_ADMIN') %}
-    <button class="btn btn-md btn-success mx-2 mb-5">
+    <button class="btn btn-md btn-success ms-5 mb-5">
         <a href="{{ path('hideout_add') }}" style="color: white; text-decoration: none">
             Add an hideout
         </a>
